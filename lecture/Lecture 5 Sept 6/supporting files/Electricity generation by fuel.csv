@@ -1,0 +1,16 @@
+Source: IEA Electricity Information 2017 - https://webstore.iea.org/electricity-information
+Methodology available at: http://wds.iea.org/wds/pdf/Ele_Documentation.pdf 
+Please note that all IEA data is subject to the following Terms and Conditions found on the IEA's website: https://www.iea.org/t&c/termsandconditions/ 
+Contact: stats@iea.org
+
+Electricity generation by fuel - World
+Units:  GWh
+"Year","Coal","Oil","Gas","Biofuels","Waste","Nuclear","Hydro","Geothermal","Solar PV","Solar thermal","Wind","Tide",
+1990,4424902,1358371,1752460,106383,24141,2012902,2192101,36425,21,663,3880,536,
+1995,4992226,1278752,2021541,96344,34769,2331951,2546280,39895,133,824,7957,547,
+2000,6005082,1251646,2752701,114828,49593,2590623,2699992,51990,980,526,31349,546,
+2005,7335369,1178120,3701934,168640,57915,2767952,3019035,58283,3974,597,103881,516,
+2010,8664188,981931,4827917,290516,81288,2756288,3531132,68120,32392,1646,341334,513,
+2015,9538300,989865,5543363,433815,94237,2571365,3978000,80446,246556,9418,838028,1006,
+
+ Note: Free downloadable time series show only 5 year increments.
