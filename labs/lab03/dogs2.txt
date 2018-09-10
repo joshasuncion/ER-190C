@@ -1,0 +1,8 @@
+name	breed	color1	color2	color3	size	lifespan (y)
+Oink	border collie mix	black	brown	white	medium	16.0
+Darcy	border collie	black 	brown	white	medium	15.0
+Kia	border collie	black	brown	white	small	17.0
+Corey	hound mix	brown	black		medium	16.0
+Maisy	terrier mix	tan	white		small	
+Mojeau	shepherd mix	brown	tan		large	14.0
+Eli	husky mix	black	brown	white	large	13.0
