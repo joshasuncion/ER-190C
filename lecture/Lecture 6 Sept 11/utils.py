@@ -1,6 +1,5 @@
-"""Some common utilities for classwork and homework.  Adapted here for use in
-"""Berkeley's ER190C, Fall 2018, from utils.py originally available for
-"""Berkeley's Data100.
+"""Some common utilities for classwork and homework.  Adapted here for use in Berkeley's ER190C, Fall 2018, from utils.py originally available for Berkeley's Data100.
+ """
 
 
 def head(filename, lines=5):
