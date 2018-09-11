@@ -1,0 +1,783 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Lecture 6 Notebook}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \section{ER190C Lecture 6 Notebook}\label{er190c-lecture-6-notebook}
+
+\textbf{Data Cleaning and Exploratory Data Analysis}
+
+Duncan Callaway
+
+September 11 2018
+
+Today we'll work with PurpleAir data to explore the concepts of
+Structure, Granularity, Scope, Temporality and Faithfulness. Along the
+way we'll talk about data cleaning as well.
+
+\href{https://www.purpleair.com/map\#1/25/-30}{Here's PurpleAir's
+website} -\/- They have really cool maps!
+
+The way I developed this lecture was by pulling the data down and
+exploring it. You'll see my (edited) process of examining the data.
+
+This began by me visiting
+\href{https://www.purpleair.com/sensorlist}{this website} to look for
+data. I used the Chrome browser to pull data (other browsers didn't
+work).
+
+The folks are PurpleAir also sent me
+\href{https://github.com/ds-modules/ER-190C/blob/master/lecture/Lecture\%206\%20Sept\%2011/Using\%20PurpleAir\%20Data.pdf}{this
+pdf} describing their data.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{import} \PY{n+nn}{os}
+\end{Verbatim}
+
+
+    \subsection{Structure.}\label{structure.}
+
+First let's look at what's in the data directory using
+\texttt{os.listdir} (remember this is a set of command line-style
+commands that work across platforms, i.e. mac, linux, windows)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{os}\PY{o}{.}\PY{n}{listdir}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}2}]:} ['.DS\_Store',
+         'Ecole Bilingue de Berkeley (37.854830799999995 -122.28937169999999) Primary 08\_05\_2018 09\_04\_2018.csv',
+         'Ecole Bilingue de Berkeley (37.854830799999995 -122.28937169999999) Secondary 08\_05\_2018 09\_04\_2018.csv']
+\end{Verbatim}
+            
+    What can we learn from these file names? * the sensor location is
+probably the French School in Berkeley. * Looks like lat / lon
+coordinates in parens * the date range is listed * there is a secondary
+/ primary distinction.
+
+Before proceeding let's find the size of some of these files:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{getsize}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data/Ecole Bilingue de Berkeley (37.854830799999995 \PYZhy{}122.28937169999999) Primary 08\PYZus{}05\PYZus{}2018 09\PYZus{}04\PYZus{}2018.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}3}]:} 2381187
+\end{Verbatim}
+            
+    What are the units? Let's shift tab in to \texttt{getsize} to find out.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{getsize}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} <function genericpath.getsize>
+\end{Verbatim}
+            
+    Not much information. Google search reveals
+\href{https://docs.python.org/2/library/os.path.html}{this} information
+page, which says the units are bytes.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{getsize}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data/Ecole Bilingue de Berkeley (37.854830799999995 \PYZhy{}122.28937169999999) Primary 08\PYZus{}05\PYZus{}2018 09\PYZus{}04\PYZus{}2018.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{/}\PY{l+m+mf}{1e6}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}5}]:} 2.381187
+\end{Verbatim}
+            
+    SO 2.4 Mb.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{getsize}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data/Ecole Bilingue de Berkeley (37.854830799999995 \PYZhy{}122.28937169999999) Secondary 08\PYZus{}05\PYZus{}2018 09\PYZus{}04\PYZus{}2018.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{/}\PY{l+m+mf}{1e6}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:} 2.497975
+\end{Verbatim}
+            
+    Before we go furhter, what's the primary vs secondary data file?
+
+Checking out the "Using Purple Air data" pdf, provided to my by them, it
+looks like the two files contain different data. We'll focus on PM2.5,
+which is in the primary file.
+
+    In this directory there is a python file (\texttt{utils.py}) that has
+some useful utilities -\/- we'll pull some in over the course of the
+lecture. First to use is \texttt{line\_count}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{k+kn}{from} \PY{n+nn}{utils} \PY{k}{import} \PY{n}{line\PYZus{}count}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{help}\PY{p}{(}\PY{n}{line\PYZus{}count}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Help on function line\_count in module utils:
+
+line\_count(file)
+    Computes the number of lines in a file.
+    
+    file: the file in which to count the lines.
+    return: The number of lines in the file
+
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{line\PYZus{}count}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data/Ecole Bilingue de Berkeley (37.854830799999995 \PYZhy{}122.28937169999999) Primary 08\PYZus{}05\PYZus{}2018 09\PYZus{}04\PYZus{}2018.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}9}]:} 29894
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{k+kn}{from} \PY{n+nn}{utils} \PY{k}{import} \PY{n}{head}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{head}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data/Ecole Bilingue de Berkeley (37.854830799999995 \PYZhy{}122.28937169999999) Primary 08\PYZus{}05\PYZus{}2018 09\PYZus{}04\PYZus{}2018.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}11}]:} ['created\_at,entry\_id,PM1.0\_CF\_ATM\_ug/m3,PM2.5\_CF\_ATM\_ug/m3,PM10.0\_CF\_ATM\_ug/m3,UptimeMinutes,RSSI\_dbm,Temperature\_F,Humidity\_\%,PM2.5\_CF\_1\_ug/m3,\textbackslash{}n',
+          '2018-08-05 00:00:31 UTC,111170,1.96,4.34,4.96,135.00,-67.00,84.00,33.00,4.34\textbackslash{}n',
+          '2018-08-05 00:01:51 UTC,111171,2.13,3.89,6.83,136.00,-67.00,84.00,33.00,3.89\textbackslash{}n',
+          '2018-08-05 00:03:11 UTC,111172,3.04,4.93,6.18,137.00,-68.00,84.00,34.00,4.93\textbackslash{}n',
+          '2018-08-05 00:04:31 UTC,111173,2.17,4.26,6.83,139.00,-65.00,84.00,33.00,4.26\textbackslash{}n']
+\end{Verbatim}
+            
+    This confirms the file type is .csv, so let's pull it in:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{EB\PYZus{}primary} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data/Ecole Bilingue de Berkeley (37.854830799999995 \PYZhy{}122.28937169999999) Primary 08\PYZus{}05\PYZus{}2018 09\PYZus{}04\PYZus{}2018.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{EB\PYZus{}primary}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}12}]:}                 created\_at  entry\_id  PM1.0\_CF\_ATM\_ug/m3  PM2.5\_CF\_ATM\_ug/m3  \textbackslash{}
+         0  2018-08-05 00:00:31 UTC    111170                1.96                4.34   
+         1  2018-08-05 00:01:51 UTC    111171                2.13                3.89   
+         2  2018-08-05 00:03:11 UTC    111172                3.04                4.93   
+         3  2018-08-05 00:04:31 UTC    111173                2.17                4.26   
+         4  2018-08-05 00:05:51 UTC    111174                2.06                4.06   
+         
+            PM10.0\_CF\_ATM\_ug/m3  UptimeMinutes  RSSI\_dbm  Temperature\_F  Humidity\_\%  \textbackslash{}
+         0                 4.96          135.0     -67.0           84.0        33.0   
+         1                 6.83          136.0     -67.0           84.0        33.0   
+         2                 6.18          137.0     -68.0           84.0        34.0   
+         3                 6.83          139.0     -65.0           84.0        33.0   
+         4                 8.51          140.0     -67.0           84.0        33.0   
+         
+            PM2.5\_CF\_1\_ug/m3  Unnamed: 10  
+         0              4.34          NaN  
+         1              3.89          NaN  
+         2              4.93          NaN  
+         3              4.26          NaN  
+         4              4.06          NaN  
+\end{Verbatim}
+            
+    Several things to ask from this: 1. Dates are UTC. 2. Each entry has a
+unique ID -\/- could be used to check for time stamp errors or gaps in
+data 3. Headers have 'CF\_ATM' at the top -\/- what does that mean? 4.
+There is one PM2.5 column without 'CF\_ATM', what is its significance?
+1. From the PurpleAir documentation, in this directory, \emph{"ATM is
+"atmospheric", meant to be used for outdoor applications. CF=1 is meant
+to be used for indoor or controlled environment applications. However,
+PurpleAir uses CF=1 values on the map. This value is lower than the ATM
+value in higher measured concentrations."}\\
+2. The explanation is a little vague and suggests further exploration
+required. But it probably has something to do with how chaning
+atmospheric pressure might change the measurements.\\
+4. The columns "UptimeMinutes" and "RSSI\_dbm" are not immediately
+obvious 1. again from documentation: "uptimeminutes" is time since last
+restart, and "RSSI\_dbm" is wifi signal strength for the device.\\
+5. The "unnamed: 10" column seems useless, why is it there? 1. Looking
+at the data we see "\n" at the end of each line (newline character), it
+appears this is generating the extra row.
+
+    \subsection{Granularity}\label{granularity}
+
+We'll talk a little more about Temporality in a moment, but time also
+matters for thinking about granularity.
+
+First we need to pay attention to the fact that this is UTC. L:et's put
+it in datetime format to prevent mistakes.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{EB\PYZus{}time} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{to\PYZus{}datetime}\PY{p}{(}\PY{n}{EB\PYZus{}primary}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{created\PYZus{}at}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{utc}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{EB\PYZus{}primary}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{created\PYZus{}at}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{=}\PY{n}{EB\PYZus{}time}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{EB\PYZus{}primary}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{created\PYZus{}at}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{dtype}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}15}]:} datetime64[ns, UTC]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{EB\PYZus{}primary}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}16}]:}                  created\_at  entry\_id  PM1.0\_CF\_ATM\_ug/m3  PM2.5\_CF\_ATM\_ug/m3  \textbackslash{}
+         0 2018-08-05 00:00:31+00:00    111170                1.96                4.34   
+         1 2018-08-05 00:01:51+00:00    111171                2.13                3.89   
+         2 2018-08-05 00:03:11+00:00    111172                3.04                4.93   
+         3 2018-08-05 00:04:31+00:00    111173                2.17                4.26   
+         4 2018-08-05 00:05:51+00:00    111174                2.06                4.06   
+         
+            PM10.0\_CF\_ATM\_ug/m3  UptimeMinutes  RSSI\_dbm  Temperature\_F  Humidity\_\%  \textbackslash{}
+         0                 4.96          135.0     -67.0           84.0        33.0   
+         1                 6.83          136.0     -67.0           84.0        33.0   
+         2                 6.18          137.0     -68.0           84.0        34.0   
+         3                 6.83          139.0     -65.0           84.0        33.0   
+         4                 8.51          140.0     -67.0           84.0        33.0   
+         
+            PM2.5\_CF\_1\_ug/m3  Unnamed: 10  
+         0              4.34          NaN  
+         1              3.89          NaN  
+         2              4.93          NaN  
+         3              4.26          NaN  
+         4              4.06          NaN  
+\end{Verbatim}
+            
+    Nice thing about the datetime formate is that you can easily get time
+information out of it:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{EB\PYZus{}primary}\PY{o}{.}\PY{n}{iloc}\PY{p}{[}\PY{l+m+mi}{1000}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{tzinfo}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}17}]:} <UTC>
+\end{Verbatim}
+            
+    Note, we could rename the cols to make things easier if we wished. I'm
+not going to because we're not going to be workign with this data set
+for long, but in other cases you might decide to.
+
+    Can we figure out how frequent measurements are?
+
+Unfortunately I found it difficult to take differences with datetime
+objects, so I had to write a for loop:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{diffs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{EB\PYZus{}primary}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{created\PYZus{}at}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{diffs}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+             \PY{n}{diffs}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n+nb}{float}\PY{p}{(}\PY{p}{(}\PY{n}{EB\PYZus{}primary}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{created\PYZus{}at}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{\PYZhy{}} \PY{n}{EB\PYZus{}primary}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{created\PYZus{}at}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{total\PYZus{}seconds}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{diffs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{p}{(}\PY{n}{diffs}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mins:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{diffs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{30}\PY{p}{]}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{maxes:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{diffs}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{30}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{diffs}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+mins: [ 0. 14. 69. 69. 70. 70. 70. 70. 71. 71. 72. 72. 72. 72. 73. 73. 73. 73.
+ 73. 74. 74. 74. 74. 74. 74. 74. 75. 75. 75. 75.]
+maxes: [134161.    931.    486.    481.    403.    384.    338.    334.    325.
+    322.    320.    320.    320.    320.    317.    315.    306.    299.
+    298.    256.    252.    245.    241.    241.    240.    240.    240.
+    240.    240.]
+mean: 86.70581741544844
+
+    \end{Verbatim}
+
+    Looks like for the most part we're sampling every 1.5 minutes or so,
+with a few gaps in the data.
+
+    \subsection{Scope}\label{scope}
+
+This is data from one location -\/- French School in Berkeley.
+
+From the file name it looks like the time is from early August to early
+September, let's confirm:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{EB\PYZus{}primary}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{created\PYZus{}at}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}19}]:} Timestamp('2018-08-05 00:00:31+0000', tz='UTC')
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{EB\PYZus{}primary}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{created\PYZus{}at}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}20}]:} Timestamp('2018-09-03 23:58:48+0000', tz='UTC')
+\end{Verbatim}
+            
+    So it's about one month of data.
+
+Does the data cover the topic of interest?
+
+In this case, we need to answer the question: For the PurpleAir data,
+what topic of interest might the data cover?
+
+-\/-\textgreater{} class discussion on this.
+
+    \subsection{Temporality}\label{temporality}
+
+We've already figured out that we're working with UTC dates. UTC is
+"universal time coordinated" and is essentially greenwich mean time, the
+time on the prime meridian.
+
+    \subsection{Faithfulness}\label{faithfulness}
+
+This one's much harder to assess. Let's have a look at some basic things
+we might care about
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n+nb}{sum}\PY{p}{(}\PY{n}{EB\PYZus{}primary}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{PM2.5\PYZus{}CF\PYZus{}ATM\PYZus{}ug/m3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{isna}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}21}]:} 0
+\end{Verbatim}
+            
+    That tells us there are no NaN values in the PM2.5 data. Impressive!
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{EB\PYZus{}primary}\PY{o}{.}\PY{n}{describe}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}22}]:}             entry\_id  PM1.0\_CF\_ATM\_ug/m3  PM2.5\_CF\_ATM\_ug/m3  \textbackslash{}
+         count   29893.000000        29893.000000        29893.000000   
+         mean   126116.000000           15.656506           23.983548   
+         std      8629.510135          120.382762          121.160645   
+         min    111170.000000            0.330000            1.220000   
+         25\%    118643.000000            5.040000            7.980000   
+         50\%    126116.000000            9.510000           14.790000   
+         75\%    133589.000000           17.280000           28.590000   
+         max    141062.000000         5003.890000         5003.890000   
+         
+                PM10.0\_CF\_ATM\_ug/m3  UptimeMinutes      RSSI\_dbm  Temperature\_F  \textbackslash{}
+         count         29893.000000   29893.000000  29893.000000   29893.000000   
+         mean             28.240713     810.441508    -64.379654      71.434048   
+         std             121.630947    1126.457388     10.010075       4.550603   
+         min               1.310000       1.000000    -79.000000      63.000000   
+         25\%              10.430000     183.000000    -67.000000      68.000000   
+         50\%              18.540000     459.000000    -65.000000      70.000000   
+         75\%              32.890000     960.000000    -63.000000      75.000000   
+         max            5003.890000    6761.000000     31.000000      88.000000   
+         
+                  Humidity\_\%  PM2.5\_CF\_1\_ug/m3  Unnamed: 10  
+         count  29893.000000      29893.000000          0.0  
+         mean      49.988726         21.014233          NaN  
+         std        6.149002         80.844029          NaN  
+         min       27.000000          1.220000          NaN  
+         25\%       45.000000          7.980000          NaN  
+         50\%       52.000000         14.790000          NaN  
+         75\%       55.000000         28.400000          NaN  
+         max       61.000000       3335.440000          NaN  
+\end{Verbatim}
+            
+    That's a pretty high PM2.5 average. And the max is very suspiciously
+high. What's going on?
+
+Options: 1. Wildfire smoke really pumped up the 2.5 values 2. We have a
+lot of missing data and only values during the wild fires 3. There are
+some erroneously high values.
+
+    Let's start by looking at how many values are big.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{n}{log\PYZus{}ind} \PY{o}{=} \PY{n}{EB\PYZus{}primary}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{PM2.5\PYZus{}CF\PYZus{}ATM\PYZus{}ug/m3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZgt{}} \PY{l+m+mi}{150}
+         \PY{n}{EB\PYZus{}primary}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{log\PYZus{}ind}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{PM2.5\PYZus{}CF\PYZus{}ATM\PYZus{}ug/m3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}23}]:} 2569     797.96
+         2570     228.62
+         2571     256.98
+         9632    1497.30
+         9633    5003.89
+         9634    4999.74
+         9635    4998.48
+         9636    5000.70
+         9637    5000.00
+         9638    5000.00
+         9639    5000.00
+         9640    5000.00
+         9641    5000.00
+         9642    4998.30
+         9643    4996.82
+         9644    4998.23
+         9645    4992.67
+         9646    4998.00
+         9647    5000.00
+         9648    4996.89
+         9649    4996.04
+         9650    2187.27
+         9692     201.70
+         Name: PM2.5\_CF\_ATM\_ug/m3, dtype: float64
+\end{Verbatim}
+            
+    Looks like there was a stretch of time with really high values, somewhat
+suspciously clustered around 5000. If I were doing more work here I
+would look into the sensor more carefully to see if there is any
+significance to that number.
+
+But for now -\/- let's just go ahead and drop them and see what happens:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{n}{EB\PYZus{}primary}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{log\PYZus{}ind}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{PM2.5\PYZus{}CF\PYZus{}ATM\PYZus{}ug/m3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{nan}
+         \PY{n}{EB\PYZus{}primary}\PY{o}{.}\PY{n}{describe}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}24}]:}             entry\_id  PM1.0\_CF\_ATM\_ug/m3  PM2.5\_CF\_ATM\_ug/m3  \textbackslash{}
+         count   29893.000000        29893.000000        29870.000000   
+         mean   126116.000000           15.656506           20.983950   
+         std      8629.510135          120.382762           18.510573   
+         min    111170.000000            0.330000            1.220000   
+         25\%    118643.000000            5.040000            7.980000   
+         50\%    126116.000000            9.510000           14.765000   
+         75\%    133589.000000           17.280000           28.550000   
+         max    141062.000000         5003.890000          115.950000   
+         
+                PM10.0\_CF\_ATM\_ug/m3  UptimeMinutes      RSSI\_dbm  Temperature\_F  \textbackslash{}
+         count         29893.000000   29893.000000  29893.000000   29893.000000   
+         mean             28.240713     810.441508    -64.379654      71.434048   
+         std             121.630947    1126.457388     10.010075       4.550603   
+         min               1.310000       1.000000    -79.000000      63.000000   
+         25\%              10.430000     183.000000    -67.000000      68.000000   
+         50\%              18.540000     459.000000    -65.000000      70.000000   
+         75\%              32.890000     960.000000    -63.000000      75.000000   
+         max            5003.890000    6761.000000     31.000000      88.000000   
+         
+                  Humidity\_\%  PM2.5\_CF\_1\_ug/m3  Unnamed: 10  
+         count  29893.000000      29893.000000          0.0  
+         mean      49.988726         21.014233          NaN  
+         std        6.149002         80.844029          NaN  
+         min       27.000000          1.220000          NaN  
+         25\%       45.000000          7.980000          NaN  
+         50\%       52.000000         14.790000          NaN  
+         75\%       55.000000         28.400000          NaN  
+         max       61.000000       3335.440000          NaN  
+\end{Verbatim}
+            
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
