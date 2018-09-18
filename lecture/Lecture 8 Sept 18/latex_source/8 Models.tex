@@ -1,4 +1,5 @@
-\documentclass[aspectratio=169, handout]{beamer}
+%\documentclass[aspectratio=169, handout]{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 
 \usefonttheme{professionalfonts}
@@ -134,7 +135,7 @@ GSI: Seigi Karasaki}
 
 \pause
 A system of equations that relates one set of variables to another set of variables.
-
+\pause
 \hspace{5mm}
 
 Examples
@@ -192,6 +193,7 @@ where $r$ is the percentage of households in a country with access to electricit
 
 The process of choosing a model's parameters using a data set of measurements.  
 
+\pause
 \hspace{5mm}
 
 For example:
@@ -325,12 +327,12 @@ Inference:
 \begin{frame}{You say regressor, I say feature}
 
 \begin{table}[]
-\begin{tabular}{lp{5cm}p{5cm}}
+\begin{tabular}{lp{5.5cm}p{5.5cm}}
  \textbf{Math} & \textbf{Machine learning} & \textbf{Statistics}  \\
  \hline
  \hline
-  $x$& predictor, input variable, \textbf{independent variable}, feature & regressor, covariate, \textbf{independent variable}, explanatory variable, right hand variable \\
- $y$ &  output variable response variable, \textbf{dependent variable} & \textbf{dependent variable,} outcome variable, left-hand side variable.
+  $x$& \textbf{independent variable}, predictor, input variable, feature & \textbf{independent variable}, regressor, covariate,  explanatory variable, right hand variable \\
+ $y$ &  \textbf{dependent variable}, output variable response variable & \textbf{dependent variable,} outcome variable, left-hand side variable.
 \end{tabular}
 \end{table}
 
@@ -385,7 +387,7 @@ Generic term: the \textit{Cost function.}
 \item Example: The mean squared error:
 
 \begin{align*}
-MSE &= \frac{1}{n} ((y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \cdots + (y_n - \hat{y}_n)^2) \\
+MSE &= \frac{1}{n} ((y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \cdots + (y_n - \hat{y}_n)^2) \\\\
 &= \frac{1}{n} (e_1^2 + e_2^2 + \cdots + e_n^2) \\
 &=\frac{1}{n} \sum_{i=1}^n e_i^2
 \end{align*}
