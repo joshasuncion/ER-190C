@@ -1,5 +1,5 @@
-%\documentclass[aspectratio=169, handout]{beamer}
-\documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=169, handout]{beamer}
+%\documentclass[aspectratio=169]{beamer}
 
 
 \usefonttheme{professionalfonts}
@@ -469,74 +469,6 @@ What might a plot of MSE versus model ``flexibility'' look like?
 \end{frame}
 
 
-\begin{frame}{Bias v. Variance}
-
-\textbf{Bias}: 
-\begin{itemize}
-\item The propensity for a model to produce errors that are systematically high or low
-\item Bias can be positive in one range of the predictor and negative in another.  
-\end{itemize}
-
-
-\textbf{Variance}
-\begin{itemize}
-\item The propensity for a model to make very different predictions if it is fit with two different training data sets from the same process.
-\end{itemize}
-
-\hspace{5mm}
-
-Total error can be decomposed:
-
-\begin{align*}
-\text{Average }(y_0-\hat{f}(x_0))^2 &=  \text{var} (\hat{f}(x_0)) + [\text{bias}(\hat{f}(x_0))]^2+\text{var}(\epsilon_0)
-\end{align*}
-
-\end{frame}
-
-
-\begin{frame}{Bias v. Variance, ctd.}
-
-
-\begin{columns}
-\column{0.4\textwidth}
-
-\includegraphics[scale=1]{figures/islr2_9a.pdf}
-
-\column{0.6\textwidth}
-
-Which model has the greatest propensity for bias?
-\begin{itemize}
-\item<2-> The linear one.  In ranges of $x$, it systematically under- or over-estimates. 
-\end{itemize}
-
-\hspace{5mm}
-
-Which model has the greatest propensity for variance?
-\begin{itemize}
-\item<3-> The squiggly one.  If we drew another sample of data, we'd probably get very different squiggles.
-\end{itemize}
-\end{columns}
-
-
-
-\end{frame}
-
-\begin{frame}{Decomposing bias-variance}
-
-\begin{columns}
-\column{0.375\textwidth}
-\includegraphics[scale=0.25]{figures/islr2_9b.pdf}
-
-\column{0.3\textwidth}
-Take a moment to think about how bias and variance add up to make the red curve on the left.  Try to draw bias and variance separately.  
-
-\column{0.3\textwidth}
-\pause 
-\includegraphics[scale=0.21]{figures/islr2_12a_text.pdf}
-
-\end{columns}
-
-\end{frame}
 \end{document}
 
 
