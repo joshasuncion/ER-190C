@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  25 SEP 2018 06:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  25 SEP 2018 09:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1208,48 +1208,63 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
 ]
 [4
 
-] <pop-sample-mean.pdf, id=48, 465.58571pt x 118.49248pt>
-File: pop-sample-mean.pdf Graphic file (type pdf)
-
-<use pop-sample-mean.pdf>
-Package pdftex.def Info: pop-sample-mean.pdf used on input line 193.
-(pdftex.def)             Requested size: 358.50229pt x 91.24309pt.
- [5
-
- <./pop-sample-mean.pdf>]
-File: pop-sample-mean.pdf Graphic file (type pdf)
-
-<use pop-sample-mean.pdf>
-Package pdftex.def Info: pop-sample-mean.pdf used on input line 193.
-(pdftex.def)             Requested size: 358.50229pt x 91.24309pt.
- [6
-
-] [7
+] [5
 
 ]
-<sample_mean_dist.pdf, id=76, 500.87125pt x 298.61563pt>
-File: sample_mean_dist.pdf Graphic file (type pdf)
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 207.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 207.
+ [6
 
-<use sample_mean_dist.pdf>
-Package pdftex.def Info: sample_mean_dist.pdf used on input line 227.
-(pdftex.def)             Requested size: 199.1693pt x 118.74243pt.
+] <pop-sample-mean.pdf, id=60, 350.81062pt x 104.39pt>
+File: pop-sample-mean.pdf Graphic file (type pdf)
+
+<use pop-sample-mean.pdf>
+Package pdftex.def Info: pop-sample-mean.pdf used on input line 220.
+(pdftex.def)             Requested size: 199.1693pt x 59.26715pt.
+ <distribution.pdf, id=61, 538.51187pt x 317.68687pt>
+File: distribution.pdf Graphic file (type pdf)
+
+<use distribution.pdf>
+Package pdftex.def Info: distribution.pdf used on input line 220.
+(pdftex.def)             Requested size: 199.1693pt x 117.49866pt.
+ [7
+
+ <./pop-sample-mean.pdf> <./distribution.pdf>]
+File: pop-sample-mean.pdf Graphic file (type pdf)
+
+<use pop-sample-mean.pdf>
+Package pdftex.def Info: pop-sample-mean.pdf used on input line 220.
+(pdftex.def)             Requested size: 199.1693pt x 59.26715pt.
+File: distribution.pdf Graphic file (type pdf)
+ <use distribution.pdf>
+Package pdftex.def Info: distribution.pdf used on input line 220.
+(pdftex.def)             Requested size: 199.1693pt x 117.49866pt.
  [8
 
- <./sample_mean_dist.pdf>]
-File: sample_mean_dist.pdf Graphic file (type pdf)
-
-<use sample_mean_dist.pdf>
-Package pdftex.def Info: sample_mean_dist.pdf used on input line 227.
-(pdftex.def)             Requested size: 199.1693pt x 118.74243pt.
- [9
+] [9
 
 ] [10
 
 ] [11
 
-] [12
+]
+<sample_mean_dist.pdf, id=113, 500.87125pt x 298.61563pt>
+File: sample_mean_dist.pdf Graphic file (type pdf)
 
-] [13
+<use sample_mean_dist.pdf>
+Package pdftex.def Info: sample_mean_dist.pdf used on input line 264.
+(pdftex.def)             Requested size: 199.1693pt x 118.74243pt.
+ [12
+
+ <./sample_mean_dist.pdf>]
+File: sample_mean_dist.pdf Graphic file (type pdf)
+
+<use sample_mean_dist.pdf>
+Package pdftex.def Info: sample_mean_dist.pdf used on input line 264.
+(pdftex.def)             Requested size: 199.1693pt x 118.74243pt.
+ [13
 
 ] [14
 
@@ -1261,19 +1276,23 @@ Package pdftex.def Info: sample_mean_dist.pdf used on input line 227.
 
 ] [18
 
+] [19
+
+] [20
+
+] [21
+
 ]
-[19
+[22
+
+] [23
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 346.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 346.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 346.
- [20
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 384.
+ [24
 
-] [21
+] [25
 
 ]
 \tf@nav=\write9
@@ -1285,20 +1304,20 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
 \tf@snm=\write11
 \openout11 = `"10 regression ctd.snm"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 348.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 348.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 386.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 386.
  (./10 regression ctd.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 348.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 348.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 386.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 386.
 Package rerunfilecheck Info: File `"10 regression ctd".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25349 strings out of 492995
- 504767 string characters out of 6132704
- 605710 words of memory out of 5000000
- 28283 multiletter control sequences out of 15000+600000
- 54823 words of font info for 84 fonts, out of 8000000 for 9000
+ 25367 strings out of 492995
+ 504981 string characters out of 6132704
+ 605711 words of memory out of 5000000
+ 28291 multiletter control sequences out of 15000+600000
+ 56040 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,15n,75p,785b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1312,10 +1331,10 @@ live/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on "10 regression ctd.pdf" (21 pages, 169144 bytes).
+Output written on "10 regression ctd.pdf" (25 pages, 195311 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

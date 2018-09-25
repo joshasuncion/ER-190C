@@ -164,6 +164,21 @@ y_i &= \hat{\beta}_0 + \hat{\beta}_1 x_i + e_i\\
 
 \end{frame}
 
+\begin{frame}{Unbiased estimators}
+
+If certain conditions (to be covered thursday) are met, then the $\beta$ values are \textit{unbiased}.
+
+\vspace{5mm}
+
+What does that mean?
+
+\vspace{5mm}
+\pause
+
+It means that the $\beta$ estimates you'd get from repeatedly sampling the population will equal, \textbf{on average}, the true $\beta$ values.
+
+\end{frame}
+
 \begin{frame}{Variance of the sample mean?}
 
 First, review:
@@ -175,7 +190,18 @@ First, review:
 Define:
 \begin{itemize}
 \item $\mu$ = population mean
-\item $\hat{\mu}$ = sample mean
+\item $\hat{\mu}_i$ = sample mean.  
+\end{itemize}
+
+$i$ indexes the sample.  
+\begin{itemize}
+\item Suppose your population is all countries in the world
+\item Randomly sample 20 of them.  
+\begin{itemize}
+\item First random sample of 20 $\rightarrow i = 1$
+\item Second random sample of 20 $\rightarrow i = 2$
+\item etc
+\end{itemize}
 \end{itemize}
 
 \end{frame}
@@ -185,7 +211,8 @@ Define:
 Suppose you're drawing many different samples from a population.  What happens to the means?
 \pause
 \begin{figure}
-\includegraphics[width=0.9\textwidth]{pop-sample-mean}
+\includegraphics[width=0.5\textwidth]{pop-sample-mean}
+\includegraphics[width=0.5\textwidth]{distribution}
 \end{figure}
 
 You get many different values, and in general they will be normally distributed.
@@ -196,24 +223,32 @@ You get many different values, and in general they will be normally distributed.
 
 If the sampling process is \textit{unbiased}:
 \begin{align*}
-\text{avg}(\hat{\mu}_i) - \mu &= 0\\
-\text{var}(\hat{\mu}_i) = \text{SE}(\hat{\mu})^2 &= \frac{\sigma^2}{n}
+\text{avg}(\hat{\mu}) - \mu &= 0\\
+\text{var}(\hat{\mu}) = \frac{\sigma^2}{n} &\onslide<2->{\equiv \text{SE}(\hat{\mu})^2}
 \end{align*}
 
-$\sigma$ is the variance of $y$ that is not correlated with $x$ \textit{across the entire population}.
+\pause
+$\sigma$ is the variance of $\epsilon$, i.e. the changes in $y$ that are not correlated with $x$ \textit{across the entire population}.
 
 \vspace{5mm}
 
+\end{frame}
+
+\begin{frame}{Population variance}
+
 Of course we rarely have the population variance.  
+\begin{itemize}
+\item We don't usually know the true model
+\item We don't usually sample the whole population
+\end{itemize}
 
 \vspace{5mm}
 
 Instead we use
 
 \begin{align*}
-\hat{\text{SE}}(\hat{\mu})^2 = \frac{\hat{\sigma}^2}{n} = \frac{\text{RSS}}{(n-1)n}
+\hat{\text{SE}}(\hat{\mu})^2 = \hat{\sigma}^2\frac{1}{n} = \frac{\text{RSS}}{(n-1)}\frac{1}{n}
 \end{align*}
-
 \end{frame}
 
 \begin{frame}{How do we interpret the standard error of the mean?}
@@ -224,6 +259,8 @@ In words: it is an estimate of the variance of the sample means, if we were to r
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{sample_mean_dist}
 \end{figure}
+
+This will be really useful in constructing ``confidence intervals'', in just a few slides.
 \end{frame}
 
 
@@ -235,8 +272,10 @@ y_i=\hat{\beta}_0+\hat{\beta}_1x_i+e_i
 We can think of the coefficients $\hat{\beta}_0$ and $\hat{\beta}_1$ in the same conceptual terms as the sample means.
 
 \begin{align*}
+\text{avg}(\hat{\beta}_0) - \beta_0 &= 0\quad\text{(unbiased)}\\
 \text{SE}(\hat{\beta}_0)^2 &= \hat{\sigma}^2 \left[ \frac{1}{n} +
 \frac{\bar{x}}{\sum_{i=1}^n (x_i-\bar{x})^2} \right]\\
+\text{avg}(\hat{\beta}_{1}) - \beta_1 &= 0\quad\text{(unbiased)}\\
 \text{SE}(\hat{\beta}_1)^2& = \frac{\hat{\sigma}^2}{\sum_{i=1}^n (x_i-\bar{x})^2}
 \end{align*}
 
@@ -261,7 +300,7 @@ Therefore the 95\% ``confidence intervals'' are
 \hat{\beta}_1 \pm 2\text{SE}(\hat{\beta}_1) 
 \end{align*}
 
-If certain conditions are met (we'll cover Thursday) then
+If certain conditions are met (we'll cover Thursday) then 
 \end{frame}
 
 \begin{frame}{How to interpret the confidence interval?}
@@ -315,7 +354,6 @@ What's wrong with these practices:
 \item Stop collecting data once $p<0.05$
 \item Analyze many independent variables, but only report those for which $p<0.05$
 \item Collect and analyze many data samples, but only report those with $p<0.05$
-\item  Use covariates to get $p<0.05$.
 \item Exclude participants to get  $p<0.05$.
 \item Transform the data to get  $p<0.05$.
 \end{itemize}
