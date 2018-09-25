@@ -1,0 +1,339 @@
+%\documentclass[aspectratio=169, handout]{beamer}
+\documentclass[aspectratio=169]{beamer}
+
+
+\makeatletter
+\renewcommand*\env@matrix[1][\arraystretch]{%
+  \edef\arraystretch{#1}%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{*\c@MaxMatrixCols c}}
+\makeatother
+
+\usepackage{tikz}
+\usetikzlibrary{tikzmark,fit,shapes.geometric}
+
+
+\newcommand{\transp}{^{\rm{T}}}
+
+\usepackage{cases}
+\usepackage[english]{babel}
+% or whatever
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage[latin1]{inputenc}
+\usepackage[super]{nth}
+% or whatever
+%\setbeamertemplate{footline}[page number]
+\setbeamertemplate{footline}
+        {
+      \leavevmode%
+      \hbox{%
+      \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+        \usebeamerfont{author in head/foot}\insertshortauthor%~~(\insertshortinstitute)
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+        \usebeamerfont{title in head/foot}\insertshorttitle
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+        \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em} \insertframenumber{}  \hspace*{2em}%/ \inserttotalframenumber\hspace*{2ex} 
+
+    %#turning the next line into a comment, erases the frame numbers
+        
+
+      \end{beamercolorbox}}%
+      \vskip 0pt%
+    }
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{psfrag}
+\usepackage{algorithm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{algpseudocode}
+\usepackage{mathrsfs}
+\usepackage{textpos}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.arrows}
+%\setkeys{Gin}{draft}
+\usepackage{caption}
+\captionsetup{font=scriptsize,labelfont=scriptsize}
+\usepackage{color}
+\DeclareCaptionFont{blue}{\color{blue}}
+\captionsetup{labelfont=blue}
+\usepackage{tikz}
+\tikzset{
+  every overlay node/.style={
+    draw=white,anchor=north west,
+  },
+}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\def\tikzoverlay{%
+   \tikz[baseline,overlay]\node[every overlay node]
+}%
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{}
+
+\newtheorem{assumption}{Assumption} %jw
+
+\newcommand{\T}{{\rm T}}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\setcounter{tocdepth}{1}
+\beamertemplatenavigationsymbolsempty
+
+
+\title[Lecture 10: Regression, continued] % (optional, use only with long paper titles)
+{Data, Environment and Society: \\{Lecture 10: Linear Regression, continued}}
+
+
+%\subtitle
+%{Include Only If Paper Has a Subtitle}
+
+\author[ER190C: Data, Environment and Society] 
+{Instructor: Duncan Callaway\\
+GSI: Seigi Karasaki} 
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+%\logo{
+%\includegraphics[width=1.5cm,height=1.5cm,keepaspectratio]{uvic_logo_h.jpg}
+%}
+\vspace{-20mm}
+\institute[UC Berkeley] % (optional, but mostly needed)
+ {\small{ \bf September 25, 2018}}
+
+
+\date[September 25, 2018]
+
+
+\begin{document}
+
+\begin{frame}[plain, noframenumbering]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Announcements}
+
+\textbf{Today}
+\begin{itemize}
+\item Standard errors
+\item Confidence intervals 
+\item We'll compare these to what we get by `simulating' the confidence interval.
+\end{itemize}
+
+\textbf{Reading}
+\begin{itemize}
+\item For thursday: Alstone et al.  See github README for instructions on what to read.
+\end{itemize}
+
+\textbf{Question}:
+\begin{itemize}
+\item Seigi out of town through rest of week.  How to support your week?
+\begin{itemize}
+\item Jupyter notebook with further review 
+\item Skype-in office hours
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Review}
+
+\end{frame}
+
+\begin{frame}{Variance of the sample mean?}
+
+First, review:
+\begin{itemize}
+\item Population: all possible realizations of a data generating process.  
+\item Sample: the subset of the population that you \textit{observe}.  
+\end{itemize}
+
+Define:
+\begin{itemize}
+\item $\mu$ = population mean
+\item $\hat{\mu}$ = sample mean
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Distribution of means}
+
+Suppose you're drawing many different samples from a population.  What happens to the means?
+\pause
+\begin{figure}
+\includegraphics[width=0.9\textwidth]{pop-sample-mean}
+\end{figure}
+
+You get many different values, and in general they will be normally distributed.
+
+\end{frame}
+
+\begin{frame}{Standard error of the mean}
+
+If the sampling process is \textit{unbiased}:
+\begin{align*}
+\text{avg}(\hat{\mu}_i) - \mu &= 0\\
+\text{var}(\hat{\mu}_i) = \text{SE}(\hat{\mu})^2 &= \frac{\sigma^2}{n}
+\end{align*}
+
+$\sigma$ is the variance of $y$ that is not correlated with $x$ \textit{across the entire population}.
+
+\vspace{5mm}
+
+Of course we rarely have the population variance.  
+
+\vspace{5mm}
+
+Instead we use
+
+\begin{align*}
+\hat{\text{SE}}(\hat{\mu})^2 = \frac{\hat{\sigma}^2}{n} = \frac{\text{RSS}}{(n-1)n}
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{How do we interpret the standard error of the mean?}
+
+In words: it is an estimate of the variance of the sample means, if we were to repeatedly sample.
+
+\pause
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{sample_mean_dist}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Ordinary least squares coefficients}
+
+\begin{align*}
+y_i=\hat{\beta}_0+\hat{\beta}_1x_i+e_i
+\end{align*}
+We can think of the coefficients $\hat{\beta}_0$ and $\hat{\beta}_1$ in the same conceptual terms as the sample means.
+
+\begin{align*}
+\text{SE}(\hat{\beta}_0)^2 &= \hat{\sigma}^2 \left[ \frac{1}{n} +
+\frac{\bar{x}}{\sum_{i=1}^n (x_i-\bar{x})^2} \right]\\
+\text{SE}(\hat{\beta}_1)^2& = \frac{\hat{\sigma}^2}{\sum_{i=1}^n (x_i-\bar{x})^2}
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Confidence intervals}
+
+For a normal distribution:
+
+\begin{align*}
+\text{mean} \pm 2 (\text{standard deviation}) = \mu \pm 2\sigma
+\end{align*}
+
+is...\pause the region containing 95\% of the probability mass in the distribution.  
+
+\vspace{5mm}
+
+Therefore the 95\% ``confidence intervals'' are
+
+\begin{align*}
+\hat{\beta}_0 \pm 2\text{SE}(\hat{\beta}_0) \\
+\hat{\beta}_1 \pm 2\text{SE}(\hat{\beta}_1) 
+\end{align*}
+
+If certain conditions are met (we'll cover Thursday) then
+\end{frame}
+
+\begin{frame}{How to interpret the confidence interval?}
+
+\pause
+
+There is a 95\% probability that the ``true'' model coefficient lies within the 95\% confidence interval around the estimated coefficient.  
+
+\vspace{5mm}
+
+Let's explore this concept with an in-class Jupyter notebook.
+
+\vspace{5mm}
+
+  See ``lecture\_10\_supporting.ipynb'' in the ``supporting notebooks'' directory for this lecture.
+
+
+\end{frame}
+
+\begin{frame}{What if the confidence interval contains zero?}
+
+For example, if 
+
+\begin{align*}
+-10.3 < \beta_1 < 24.8?
+\end{align*}
+
+This implies there is more than a remote chance that there is no significant relationship between the dependent and independent variables.  
+
+\end{frame}
+
+\begin{frame}{p-values}
+
+
+p-values measure the probability that the estimated coefficients arose by chance from a data generating process that actually has \textit{no} relationship between the inputs and outputs.  
+
+\vspace{5mm}
+
+p = 0.05 implies a 5\% chance that the true parameter value is \textit{zero}.  
+
+\vspace{5mm}
+
+A small p-value indicates that it is unlikely to observe such a substantial association between the predictor and the response due to chance.
+
+\end{frame}
+
+\begin{frame}{p-hacking?}
+
+What's wrong with these practices:
+\begin{itemize}
+\item Stop collecting data once $p<0.05$
+\item Analyze many independent variables, but only report those for which $p<0.05$
+\item Collect and analyze many data samples, but only report those with $p<0.05$
+\item  Use covariates to get $p<0.05$.
+\item Exclude participants to get  $p<0.05$.
+\item Transform the data to get  $p<0.05$.
+\end{itemize}
+
+(credit to Leif Nelson, UCB Haas)
+
+\end{frame}
+
+\begin{frame}{The trouble with p-hacking...}
+
+...is that by looking for the data set and the models that give low p-values, you could just be looking for those 5\% ``chances'' where the real relationship is non-existent.
+
+\vspace{5mm}\pause
+
+Some estimates suggest that this practice leads to false positive rates of 61\%!
+
+\end{frame}
+
+\begin{frame}{Model accuracy: R$^2$}
+
+\begin{align*}
+R^2 = \frac{TSS - RSS}{TSS} = \frac{\sum_{i=1}^n (y_i-\bar{y})^2 - \sum_{i=1}^n e_i^2}{\sum_{i=1}^n (y_i-\bar{y})^2} = 1-\frac{\sum_{i=1}^n e_i^2}{\sum_{i=1}^n (y_i-\bar{y})^2} 
+\end{align*}
+
+\pause
+$R^2$ measures the fraction of variation in the dependent variable that is captured by the model.  
+
+\end{frame}
+
+\end{document}
+
+
