@@ -151,6 +151,17 @@ GSI: Seigi Karasaki}
 
 \begin{frame}{Review}
 
+\begin{align*}
+y_i &= \hat{\beta}_0 + \hat{\beta}_1 x_i + e_i\\
+\hat{y_i} &= \hat{\beta}_0 + \hat{\beta}_1 x_i
+\end{align*}
+
+\begin{align*}
+\frac{\partial  \sum_{i=1}^n(y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i))^2}{\partial \hat{\beta}_0} = 0 \quad\quad &\Rightarrow \hat{\beta}_0  =\bar{y} - \hat{\beta}_1\bar{x}\\\\
+\frac{\partial   \sum_{i=1}^n(y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i))^2}{\partial \hat{\beta}_0} = 0 \quad\quad &\Rightarrow 
+\hat{\beta}_1 = \frac{ \sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2}
+\end{align*}
+
 \end{frame}
 
 \begin{frame}{Variance of the sample mean?}

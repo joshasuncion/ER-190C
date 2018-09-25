@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  25 SEP 2018 06:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  25 SEP 2018 06:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1200,19 +1200,19 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 149.
  [2
 
-] [3
-
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 170.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 165.
+ [3
 
+]
 [4
 
-] <pop-sample-mean.pdf, id=45, 465.58571pt x 118.49248pt>
+] <pop-sample-mean.pdf, id=48, 465.58571pt x 118.49248pt>
 File: pop-sample-mean.pdf Graphic file (type pdf)
 
 <use pop-sample-mean.pdf>
-Package pdftex.def Info: pop-sample-mean.pdf used on input line 182.
+Package pdftex.def Info: pop-sample-mean.pdf used on input line 193.
 (pdftex.def)             Requested size: 358.50229pt x 91.24309pt.
  [5
 
@@ -1220,18 +1220,18 @@ Package pdftex.def Info: pop-sample-mean.pdf used on input line 182.
 File: pop-sample-mean.pdf Graphic file (type pdf)
 
 <use pop-sample-mean.pdf>
-Package pdftex.def Info: pop-sample-mean.pdf used on input line 182.
+Package pdftex.def Info: pop-sample-mean.pdf used on input line 193.
 (pdftex.def)             Requested size: 358.50229pt x 91.24309pt.
  [6
 
 ] [7
 
 ]
-<sample_mean_dist.pdf, id=74, 500.87125pt x 298.61563pt>
+<sample_mean_dist.pdf, id=76, 500.87125pt x 298.61563pt>
 File: sample_mean_dist.pdf Graphic file (type pdf)
 
 <use sample_mean_dist.pdf>
-Package pdftex.def Info: sample_mean_dist.pdf used on input line 216.
+Package pdftex.def Info: sample_mean_dist.pdf used on input line 227.
 (pdftex.def)             Requested size: 199.1693pt x 118.74243pt.
  [8
 
@@ -1239,7 +1239,7 @@ Package pdftex.def Info: sample_mean_dist.pdf used on input line 216.
 File: sample_mean_dist.pdf Graphic file (type pdf)
 
 <use sample_mean_dist.pdf>
-Package pdftex.def Info: sample_mean_dist.pdf used on input line 216.
+Package pdftex.def Info: sample_mean_dist.pdf used on input line 227.
 (pdftex.def)             Requested size: 199.1693pt x 118.74243pt.
  [9
 
@@ -1266,11 +1266,11 @@ Package pdftex.def Info: sample_mean_dist.pdf used on input line 216.
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 335.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 346.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 335.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 346.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 335.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 346.
  [20
 
 ] [21
@@ -1285,18 +1285,18 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
 \tf@snm=\write11
 \openout11 = `"10 regression ctd.snm"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 337.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 337.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 348.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 348.
  (./10 regression ctd.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 337.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 337.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 348.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 348.
 Package rerunfilecheck Info: File `"10 regression ctd".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  25349 strings out of 492995
  504767 string characters out of 6132704
- 603710 words of memory out of 5000000
+ 605710 words of memory out of 5000000
  28283 multiletter control sequences out of 15000+600000
  54823 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1312,7 +1312,7 @@ live/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on "10 regression ctd.pdf" (21 pages, 168019 bytes).
+Output written on "10 regression ctd.pdf" (21 pages, 169144 bytes).
 PDF statistics:
  220 PDF objects out of 1000 (max. 8388607)
  171 compressed objects within 2 object streams

@@ -1,0 +1,1 @@
+The interact link for today's lecture notebook is [here](http://datahub.berkeley.edu/user-redirect/interact?account=ds-modules&repo=ER-190C&branch=master&path=lecture/Lecture%2010%20Sept%2025/supporting%20notebooks)
