@@ -13,7 +13,6 @@
 \usepackage{tikz}
 \usetikzlibrary{tikzmark,fit,shapes.geometric}
 
-
 \newcommand{\transp}{^{\rm{T}}}
 
 \usepackage{cases}
@@ -127,37 +126,58 @@ GSI: Seigi Karasaki}
 
 \textbf{Today}
 \begin{itemize}
-\item x
+\item First: slides, covering multiple regression and (one form of) model selection.  Slides in GitHub
+\item Second: Start working with NO2 data in Jupyter notebook
+\item Third: Group discussion for Alstone et al
 \end{itemize}
 
 \textbf{Reading}
 \begin{itemize}
-\item x
+\item Next tuesday: Novotny \textit{et al}, see questions in GitHub folder for lecture 12 reading.
+\item Next week: ISLR Ch 3.3.
 \end{itemize}
+
+\textbf{Survey posted!  Please respond}
 \end{frame}
 
-\begin{frame}{Mid term and final project}
 
-Midterm: What to expect.
+\begin{frame}{Mid term}
 
-\vspace{5mm}
-
-Final project: What you'll be doing.
-
+\textbf{Not intended to be hard.  }
+\begin{itemize}
+\item Some basic theory, formula recall and application of mathematical concepts
+\begin{itemize}
+\item Anything on slides or in labs
+\item ISLR will reinforce, but I won't test things from ISLR not covered in lecture of lab.
+\end{itemize}
+\item Principles of EDA and visualization
+\item Basic questions about working in Python
+\begin{itemize}
+\item Setting up libraries
+\item Accessing information from data frames
+\item Etc.  
+\end{itemize}
+\end{itemize}
 
 \end{frame}
 
-\begin{frame}{Review}
+\begin{frame}{Final project}
+
+\begin{itemize}
+\item You can work with your own data
+\item But we will also suggest data sets
+\item Working in groups up to three ok but not required (you can self-organize)
+\item We will give you basic guardrails on what to do
+\begin{itemize}
+\item Pose a coherent question that can be addressed using the skills we are learning
+\item EDA and visualization requirements
+\item Carry out multiple prediction exercises using the tools we are learning.
+\item Critique the performance of your models
+\item Interpret your results within the confines of what your models are capable of.
+\end{itemize}
+\end{itemize}
 
 \end{frame}
-
-\begin{frame}{Confidence intervals, redux}
-  \begin{itemize}
-    \item Cover distributions -- which one are we describing with the standard error?
-    \item Derive standard errors?
-  \end{itemize}
-\end{frame}
-
 
 \begin{frame}{What if the confidence interval contains zero?}
 
@@ -167,7 +187,11 @@ For example, if
   -10.3 < \beta_1 < 24.8?
 \end{align*}
 
+...where the upper and lower bounds comprise the 95\% confidence interval.
 
+\pause
+
+\vspace{5mm}
 This implies there is more than a remote chance that there is no significant relationship between the dependent and independent variables.  
 
 \end{frame}
@@ -179,7 +203,15 @@ p-values measure the probability that the estimated coefficients arose by chance
 
 \vspace{5mm}
 
-p = 0.05 implies a 5\% chance that the true parameter value is \textit{zero}.  
+$p = 0.05$ implies a 5\% chance that the true parameter value is \textit{zero}.  
+
+\vspace{5mm}
+
+If $p\ll0.05$, then the parameter is strongly inside the 95\% confidence interval.
+
+\vspace{5mm}
+
+If $p>0.05$, then the parameter is outside the 95\% confidence interval.
 
 \vspace{5mm}
 
@@ -218,12 +250,23 @@ Some estimates suggest that this practice leads to false positive rates of 61\%!
 %%%%%%%%%%%%%
 \begin{frame}{Model accuracy: R$^2$}
 
+TSS = total sum of squares
+
+\vspace{3mm}
+
+RSS = residual sum of squares
+
   \begin{align*}
-    R^2 = \frac{TSS - RSS}{TSS} = \frac{\sum_{i=1}^n (y_i-\bar{y})^2 - \sum_{i=1}^n e_i^2}{\sum_{i=1}^n (y_i-\bar{y})^2} = 1-\frac{\sum_{i=1}^n e_i^2}{\sum_{i=1}^n (y_i-\bar{y})^2} 
+    R^2 = \frac{TSS - RSS}{TSS} \onslide<2->{= \frac{\sum_{i=1}^n (y_i-\bar{y})^2 - \sum_{i=1}^n e_i^2}{\sum_{i=1}^n (y_i-\bar{y})^2}}\onslide<3->{ = 1-\frac{\sum_{i=1}^n e_i^2}{\sum_{i=1}^n (y_i-\bar{y})^2} }
   \end{align*}
 
-  \pause
+  \pause\pause
   $R^2$ measures the fraction of variation in the dependent variable that is captured by the model.  
+
+\pause
+\vspace{5mm}
+
+It's good for capturing predictive power, but not for evaluating the significance of the model.
 
 \end{frame}
 
@@ -244,14 +287,40 @@ The mechanics of finding parameters is easy.  The real challenge is: Which featu
 
 \textbf{The challenge:} Don't include variables in your model that lead to over-fit.
 
+\vspace{-5mm}
+
+\begin{figure}
+\includegraphics[height=0.8\textheight]{islr2_9b}
+\end{figure}
+
+\vspace{-10mm}
+With multiple regression, increasing the number of variables increases the flexibility of the model.
+
+\end{frame}
+
+\begin{frame}{Model selection methods}
+
 \textbf{Two basic methods:}
+\vspace{5mm}
 \begin{itemize}
-\item Computationally heavy and theoretically robust to 
-\item Easy to implement (no need for significant computing)
+\item Computationally heavy and theoretically robust: 
+\begin{itemize}
+\item repeated sampling of train and test data sets
+\item build and test models with each sampled set
+\item choose the model form that minimizes test error, on average.
+\item the figure on the previous slide is an example of this approach.
+\end{itemize}
+\vspace{5mm}
+\item Easy to implement (no need for significant computing):
+\begin{itemize}
+\item Use the full data set
+\item Fit each candidate model once
+\item Choose the model that minimizes an ``adjusted'' measure of R2 or mean squared error.
+\end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{The easy-to-implement method}
+\begin{frame}{An easy-to-implement method}
 
 Akaike information criterion (AIC):
 
@@ -259,10 +328,11 @@ Akaike information criterion (AIC):
 \item Construct all the models you have time for using \textit{all} the data to train the models.
 \item Then, choose the model with the lowest AIC, where
 \begin{align*}
-\text{AIC} = \frac{1}{n\hat{\sigma}^2}(\text{RSS}+2d\hat{\sigma}^2) = \frac{1}{\hat{\sigma}^2}\left(\frac{\text{RSS}}{n}\right) + \frac{2d}{n}
+\text{AIC} = \frac{1}{n\hat{\sigma}^2}(\text{RSS}+2d\hat{\sigma}^2) \onslide<2->{= \frac{1}{\hat{\sigma}^2}\left(\frac{\text{RSS}}{n}\right) + \frac{2d}{n}}
 \end{align*}
 \end{enumerate}
 
+\pause
 As you can see, AIC ``penalizes'' models with a high value of $d$.  
 \end{frame}
 
@@ -271,6 +341,7 @@ As you can see, AIC ``penalizes'' models with a high value of $d$.
 It actually has a rigorous theoretical underpinning.  Understanding the derivation requires background in information theory and more time than we have here.  
 
 \vspace{5mm}
+\pause
 
 But:
 \begin{itemize}
@@ -309,7 +380,7 @@ NO$_2$:
 \begin{itemize}
 \item Direct product of fossil fuel combustion
 \item Used as an indicator for larger group of nitrogen oxides.
-\item Health impact: Contributes to development of and aggravates asthma 
+\item Health impact: Contributes to development of, and aggravates, asthma 
 \item Environmental impact: Haze, acid rain, nutrient pollution in coastal waters
 \end{itemize}
 
@@ -327,15 +398,29 @@ EPA Regulates NO2:
 \item Can we \textit{predict} concentrations where monitors are absent?
 \end{itemize}
 
+\pause
+\begin{columns}
+\column{0.5\textwidth}
 \textbf{``Remote sensing'' data from satellites can be useful:}
 \begin{itemize}
 \item Aurora satellite ``Ozone Monitoring Instrument'' provides tropospheric NO2 column abundance (units: ppb; Called ``WRF+DOMINO'' in data set we'll work with).
 \end{itemize}
+
+\column{0.5\textwidth}
+\begin{figure}
+\includegraphics[width=0.75\textwidth]{aurora}
+\caption*{}
+\end{figure}
+\end{columns}
+
+
+\pause
 \textbf{But!}
 \begin{itemize}
 \item Measurements are for entire column of air above a location, not ground-level
 \item Spatial resolution is low
 \end{itemize}
+
 \end{frame}
 
 \begin{frame}{Land use regression for NO$_2$}
@@ -356,12 +441,18 @@ EPA Regulates NO2:
 \end{frame}
 
 
-\begin{frame}{Regressing against remote-sensed data only}
-  Run this model.
+\begin{frame}{}
+	Let's run some linear regression models with these data.  Move over to data hub.
+
 \end{frame}
 
+\begin{frame}{Reading questions}
 
-\begin{frame}{Let's include other predictors!}
+\begin{itemize}
+\item  Review Figure 1 in detail.  From a visualization perspective, what features of the figure do you appreciate?  Do you think it could be improved upon?
+\item In the section \textbf{Electricity and human development}, the authors state that their figure is 'consistent with an aggregate view of household-level diminishing returns on energy consumption....'  Discuss what the authors mean by this statement.  Do you agree?
+\item  In the section \textbf{The electricity continuum}, the authors argue that 'By overcoming access barriers, often through market-based structures, these systems provide incremental and often substantial increases in access to services, compared with the status quo.'  Contrast this statement to the premise of Lee \textit{et al} (which we read last week).  Is Alstone \textit{et al}'s view consistent or in conflict with Lee \textit{et al}?  
+\end{itemize}
 
 \end{frame}
 
