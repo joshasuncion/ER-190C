@@ -320,68 +320,6 @@ Let's explore this concept with an in-class Jupyter notebook.
 
 \end{frame}
 
-\begin{frame}{What if the confidence interval contains zero?}
-
-For example, if 
-
-\begin{align*}
--10.3 < \beta_1 < 24.8?
-\end{align*}
-
-This implies there is more than a remote chance that there is no significant relationship between the dependent and independent variables.  
-
-\end{frame}
-
-\begin{frame}{p-values}
-
-
-p-values measure the probability that the estimated coefficients arose by chance from a data generating process that actually has \textit{no} relationship between the inputs and outputs.  
-
-\vspace{5mm}
-
-p = 0.05 implies a 5\% chance that the true parameter value is \textit{zero}.  
-
-\vspace{5mm}
-
-A small p-value indicates that it is unlikely to observe such a substantial association between the predictor and the response due to chance.
-
-\end{frame}
-
-\begin{frame}{p-hacking?}
-
-What's wrong with these practices:
-\begin{itemize}
-\item Stop collecting data once $p<0.05$
-\item Analyze many independent variables, but only report those for which $p<0.05$
-\item Collect and analyze many data samples, but only report those with $p<0.05$
-\item Exclude participants to get  $p<0.05$.
-\item Transform the data to get  $p<0.05$.
-\end{itemize}
-
-(credit to Leif Nelson, UCB Haas)
-
-\end{frame}
-
-\begin{frame}{The trouble with p-hacking...}
-
-...is that by looking for the data set and the models that give low p-values, you could just be looking for those 5\% ``chances'' where the real relationship is non-existent.
-
-\vspace{5mm}\pause
-
-Some estimates suggest that this practice leads to false positive rates of 61\%!
-
-\end{frame}
-
-\begin{frame}{Model accuracy: R$^2$}
-
-\begin{align*}
-R^2 = \frac{TSS - RSS}{TSS} = \frac{\sum_{i=1}^n (y_i-\bar{y})^2 - \sum_{i=1}^n e_i^2}{\sum_{i=1}^n (y_i-\bar{y})^2} = 1-\frac{\sum_{i=1}^n e_i^2}{\sum_{i=1}^n (y_i-\bar{y})^2} 
-\end{align*}
-
-\pause
-$R^2$ measures the fraction of variation in the dependent variable that is captured by the model.  
-
-\end{frame}
 
 \end{document}
 
