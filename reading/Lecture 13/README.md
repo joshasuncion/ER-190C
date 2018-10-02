@@ -1,0 +1,1 @@
+For today's lecture we'll cover gradient descent.  Please review the DS100 textbook, [Chapter 11](https://www.textbook.ds100.org/ch/11/gradient_descent.html)
