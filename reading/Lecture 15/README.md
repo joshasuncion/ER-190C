@@ -1,1 +1,0 @@
-For Lecture 15 we'll have in-class discussion on Clark, Millet and Marshall's paper, *National Patterns in Environmental Injustice and Inequality: Outdoor NO2 Air Pollution in the United States*, in this directory.  
