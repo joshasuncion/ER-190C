@@ -1,0 +1,182 @@
+% \usepackage[pdftex]{graphicx}
+% \usepackage{epstopdf}
+\usepackage{epsfig,amsfonts,latexsym,amssymb,shadow,amsmath,wrapfig}%,eepicemu}%,psfrag}
+\usepackage[margin=10pt,font=small,labelfont=bf,justification=justified]{caption}
+\captionsetup{justification=justified, singlelinecheck=false}
+\usepackage[usenames]{color}
+\usepackage{tikz}
+
+
+% FONTS
+\newcommand{\bsf}[1]{\textsf{\textbf{#1}}}
+\newcommand{\lbsf}[1]{\textsf{\large  \textbf{#1}}}
+\newcommand{\Lbsf}[1]{\textsf{\Large  \textbf{#1}}}
+\newcommand{\hbsf}[1]{\textsf{\huge  \textbf{#1}}}
+
+% MINIPAGE
+\newcommand{\myminipage}[3]{\begin{minipage}[#1]{#2}{#3} \end{minipage}}
+\newcommand{\sbs}[4]{\myminipage{c}{#1}{#3} \hfill \myminipage{c}{#2}{#4}}
+
+% POSTSCRIPT FIGURES
+\newcommand{\myfig}[2]{\centerline{\psfig{figure=#1,width=#2,silent=}}}     % specify width only
+\newcommand{\myfigh}[2]{\centerline{\psfig{figure=#1,height=#2,silent=}}}   % specify height only
+\newcommand{\myfigwh}[3]{\centerline{\psfig{figure=#1,width=#2,height=#3,silent=}}} % specify w and h
+
+% EQUATIONS AND EQUATIONS ARRAYS
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\beqan}{\begin{eqnarray*}}
+\newcommand{\eeqan}{\end{eqnarray*}}
+\newcommand{\dst}[1]{\displaystyle{ #1 }}
+
+% LINEAR ALGEBRA
+\newcommand{\smax}[1] { \bar \sigma \left( #1 \right) }
+\newcommand{\Rn}{{\mathbb R}^n}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+
+% PROBABILITY
+\newcommand{\Exp}[1]{\exp \left\{ #1 \right\}} % exponential
+\newcommand{\gaussian}[1]{\mathbb{N} \left( #1 \right)}
+\newcommand{\uniform}[1]{\mathbb{U} \left[ #1 \right]}
+\newcommand{\exponential}[1]{\mathbb{E} \left[ #1 \right]}
+\newcommand{\EXP}[1]{\EEXP \left[ #1 \right]} % expectation
+\newcommand{\EEXP}{\mbox{\bsf{E}}} % expectation
+\newcommand{\Prob}[1]{\mbox{{\sf Prob}} \left(#1 \right)}
+
+% MATRICES AND ARRAYS
+\renewcommand{\arraystretch}{0.9}
+\newcommand{\mat}[1]{ \left[ \begin{array}{cccccccc} #1 \end{array} \right] }
+\newcommand{\smallmat}[1]{\small{\mat{#1}}}
+\newcommand{\sysblk}[4]{\begin{array}{c|cccc}#1&#2\\ \hline#3&#4 \end{array}}
+\newcommand{\sysmat}[4]{\left[\sysblk{#1}{#2}{#3}{#4}\right]}
+
+% CALLIGRAPHIC AND BOLD SYMBOLS
+\newcommand{\Aset}{\mathbb{A}}
+\newcommand{\Bset}{\mathbb{B}}
+\newcommand{\Cset}{\mathbb{C}}
+\newcommand{\Eset}{\mathbb{E}}
+\newcommand{\Fset}{\mathbb{F}}
+\newcommand{\Iset}{\mathbb{I}}
+\newcommand{\Mset}{\mathbb{M}}
+\newcommand{\Pset}{\mathbb{P}}
+\newcommand{\Qset}{\mathbb{Q}}
+\newcommand{\Rset}{\mathbb{R}}
+\newcommand{\Sset}{\mathbb{S}}
+\newcommand{\Tset}{\mathbb{T}}
+\newcommand{\Uset}{\mathbb{U}}
+\newcommand{\Vset}{\mathbb{V}}
+\newcommand{\Wset}{\mathbb{W}}
+\newcommand{\Xset}{\mathbb{X}}
+\newcommand{\Yset}{\mathbb{Y}}
+\newcommand{\Zset}{\mathbb{Z}}
+
+\newcommand{\Acal}{{\cal A}}
+\newcommand{\Bcal}{{\cal B}}
+\newcommand{\Ccal}{{\cal C}}
+\newcommand{\Dcal}{{\cal D}}
+\newcommand{\Ecal}{{\cal E}}
+\newcommand{\Fcal}{{\cal F}}
+\newcommand{\Gcal}{{\cal G}}
+\newcommand{\Hcal}{{\cal H}}
+\newcommand{\Kcal}{{\cal K}}
+\newcommand{\Lcal}{{\cal L}}
+\newcommand{\Mcal}{{\cal M}}
+\newcommand{\Ncal}{{\cal N}}
+\newcommand{\Pcal}{{\cal P}}
+\newcommand{\Qcal}{{\cal Q}}
+\newcommand{\Rcal}{{\cal R}}
+\newcommand{\Scal}{{\cal S}}
+\newcommand{\Tcal}{{\cal T}}
+\newcommand{\Ucal}{{\cal U}}
+\newcommand{\Zcal}{{\cal Z}}
+
+\newcommand{\FF}{{\bf F}}
+\newcommand{\GG}{{\bf G}}
+\newcommand{\HH}{{\bf H}}
+\newcommand{\LL}{{\bf L}}
+\newcommand{\NN}{{\bf N}}
+\newcommand{\MM}{{\bf M}}
+\newcommand{\PP}{{\bf P}}
+\newcommand{\QQ}{{\bf Q}}
+\newcommand{\RR}{{\bf R}}
+\renewcommand{\SS}{{\bf S}}
+\newcommand{\TT}{{\bf T}}
+\newcommand{\VV}{{\bf V}}
+\newcommand{\WW}{{\bf W}}
+
+% MISCELLANEOUS
+\newcommand{\argmin}{\mbox{argmin}}
+\newcommand{\argmax}{\mbox{argmax}}
+\newcommand{\thk}{\theta^{(k)}}
+\newcommand{\thb}{\theta^{\rm opt}}
+\newcommand{\alb}{\alpha^{\rm opt}}
+\newcommand{\dk}{d^{(k)}}
+\newcommand{\Hinf}{{\cal H}_\infty}
+\newcommand{\Htwo}{{\cal H}_2}
+
+\renewcommand{\arraystretch}{1.1}
+
+\newcommand{\nrml}{\textnormal}
+\newcommand{\Atxt}{\nrml{A}}
+\newcommand{\Htxt}{\nrml{H}}
+\newcommand{\Vtxt}{\nrml{V}}
+
+% COLORS
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+
+% PAGE GEOMETRY
+\setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parsep}{.1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\parindent}{0in}
+\setlength{\topmargin}{-0.2in}
+
+% LISTS AND COUNTERS
+\newcounter{l1}
+\newcounter{l2}
+\newcounter{l3}
+\setlength{\itemsep}{0cm} \setlength{\itemindent}{0in}
+\newcommand{\bdotlist}{\begin{list}{$\bullet$}{}}
+\newcommand{\bboxlist}{\begin{list}{$\Box$}{}}
+\newcommand{\bbboxlist}{\begin{list}{\raisebox{.005in}{{\tiny $\blacksquare$ \ \ }}}{}}
+\newcommand{\bdashlist}{\begin{list}{$-$}{} }
+\newcommand{\blist}{\begin{list}{}{} }
+\newcommand{\barablist}{\begin{list}{\arabic{l1}}{\usecounter{l1}}}
+\newcommand{\balphlist}{\begin{list}{(\alph{l2})}{\usecounter{l2}}}
+\newcommand{\bAlphlist}{\begin{list}{\Alph{l2}.}{\usecounter{l2}}}
+\newcommand{\bdiamlist}{\begin{list}{$\diamond$}{}}
+\newcommand{\bromalist}{\begin{list}{(\roman{l3})}{\usecounter{l3}}}
+
+% ENVIRONMENTS
+\newcommand{\result}[1]{\addtocounter{foo}{1} \begin{theorem} #1 \end{theorem}}
+\newcommand{\prop}[1]{\begin{proposition} #1 \end{proposition}}
+\newcommand{\lem}[1]{\begin{lemma} #1 \end{lemma}}
+\newcommand{\ex}[1]{\begin{example} {\rm #1} \end{example}}
+\newcommand{\rem}[1]{\begin{remark} {\rm #1} \end{remark}}
+\newcommand{\defn}[1]{\begin{definition} {\rm #1 }
+\end{definition}}
+%   \newcommand{\exs}[1]{ {\bf Examples \ }  #1 }
+\newcommand{\prob}[1]{\begin{problem} {\rm  #1 \hfill $\Box$} \end{problem}}
+\newcommand{\cor}[1]{\begin{corollary}   #1  \end{corollary}}
+
+% EQUATION AND THEOREM LABELLING
+\newcounter{foo}
+\newcounter{goo}
+%\addtocounter{foo}{1}
+\renewcommand{\theequation}{\arabic{equation}}
+\newtheorem{theorem}{Result}[foo]
+\newtheorem{problem}[goo]{Problem}
+\renewcommand{\thetheorem}{\arabic{foo}}
+
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{conj}[theorem]{Conjecture}
