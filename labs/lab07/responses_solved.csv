@@ -1,0 +1,11 @@
+Name,Cost,Zone,Package weight (lb),x_western,x_mountain,x_central,x_eastern
+Lars,$28 ,Western,33,1,0,0,0
+Maneesh,$22 ,Mountain,34,0,1,0,0
+Goodwill,$4 ,Central,1,0,0,1,0
+Ruzena,$15 ,Eastern,25,0,0,0,1
+Claudio,$21 ,Western,23,1,0,0,0
+Magali,$8 ,Mountain,12,0,1,0,0
+Tsu-Jae,$18 ,Central,6,0,0,1,0
+Malebogo,$16 ,Eastern,17,0,0,0,1
+Rongxin,$15 ,Other,60,0,0,0,0
+Maria,$13 ,Other,2,0,0,0,0
