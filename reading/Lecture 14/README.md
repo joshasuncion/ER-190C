@@ -1,4 +1,4 @@
-For Lecture 15 we'll have in-class discussion on Clark, Millet and Marshall's paper, *National Patterns in Environmental Injustice and Inequality: Outdoor NO2 Air Pollution in the United States*, in this directory.  
+For Lecture 14 we'll have in-class discussion on Clark, Millet and Marshall's paper, *National Patterns in Environmental Injustice and Inequality: Outdoor NO2 Air Pollution in the United States*, in this directory.  
 
 Some questions to focus on:
 1. In the second paragraph of the "Statistical Analysis" section the authors describe how their measures are not available for the entire population.  For example, combined race-income metrics are available for only 38\% of the population because the census collects income data for only one person per household.   Is there potential sampling bias?  How might that bias impact the way you interpret your results?

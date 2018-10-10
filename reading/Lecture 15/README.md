@@ -1,0 +1,1 @@
+For Lecture 15 we'll cover the roots of classification.  To prepare please read Ch 4.1 through 4.3.1, and also review Ch 2.2.3.
