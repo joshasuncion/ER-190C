@@ -1,0 +1,2 @@
+# ER190C
+This homework will cover cross validation and resampling.  Duncan still needs to design it, but the basic idea is to work with a very simple data set to manually resample data and to explore the bias variance tradeoff.  
