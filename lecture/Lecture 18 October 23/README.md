@@ -1,2 +1,2 @@
 README.md
-The interact link for today's lecture is [here](
+The interact link for today's lecture is [here](http://datahub.berkeley.edu/user-redirect/interact?account=ds-modules&repo=ER-190C&branch=master&path=lecture/Lecture%2018%20October%2023/supporting%20notebook).
