@@ -1,0 +1,1 @@
+For Lecture 19 we discussed subset selection and did a very fast introduction to ridge regression and lasso.  All that is covered in ISLR Ch 6.1, 6.2.  

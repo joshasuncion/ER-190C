@@ -1,0 +1,1 @@
+For Lecture 18 we covered cross validation, which is covered in ISLR Ch 5.
