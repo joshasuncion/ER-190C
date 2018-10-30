@@ -368,7 +368,7 @@ In ridge regression, we use a very intuitive objective function:
 
 \begin{align*}
 \hat{\beta}_{\text{ridge}} &= \arg \min_\beta \sum_{i=1}^N \left(Y_i - X_i \beta \right)^2+\lambda \cdot \sum_{k=1}^K \beta_k^2\\
-&= \arg \min_\beta \sum_{i=1}^N \left(Y_i - X_i \beta \right)^2+\lambda \cdot ||\beta||_2
+&= \arg \min_\beta \sum_{i=1}^N \left(Y_i - X_i \beta \right)^2+\lambda \cdot ||\beta||_2^2 
 \end{align*}
 
 This leads to:
