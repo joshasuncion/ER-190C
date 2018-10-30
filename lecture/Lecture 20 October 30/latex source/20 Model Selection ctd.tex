@@ -376,16 +376,6 @@ Understand the tradeoffs between these methods in more detail
 
 \end{frame}
 
-\begin{frame}{Lasso or ridge?}
-
-Lasso performs better when the number of predictors truly is small, and otherwise it performs worse.  \\~\\
-
-Since you can't know ahead of time if the response is a function of a few or all predictors, it makes sense to just try both.  
-
-\end{frame}
-
-
-
 
 \begin{frame}{Ridge regression advantages over OLS}
 
@@ -414,7 +404,6 @@ Then $\mathbf{X}^T\mathbf{X}$ is not ``full rank'' and you can't invert it.  I.e
 \pause
 
 But you \textit{can} invert $\left(\mathbf{X}^T\mathbf{X} + \lambda\mathbf{I}_k\right)$.  (Since you've added a little shift to the diagonals of the matrix, which restores linear independence)\\~\\
-
 
 
 \pause
@@ -470,6 +459,24 @@ With highly correlated predictors, Lasso is unstable: indifferent between
 \item $\hat{\beta}_1=0$ and $\hat{\beta}_2= \beta_1+\beta_2$
 \item $\hat{\beta}_1= \beta_1+\beta_2$ and $\hat{\beta}_2=0$
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Ok, so which should I use?}
+
+You won't know ahead of time if your model \textit{actually} needs a lot of features or not.  
+
+\vspace{5mm}
+
+...and it's very easy to re-run a specification with Ridge, then Lasso.
+
+\vspace{5mm}
+
+...so you might as well try them both.
+
+\vspace{5mm}
+
+Subset selection can be computationally more prohibitive, so you may not be able to run it, depending on your computing environment.
+
 \end{frame}
 
 \begin{frame}{Objective 5}
