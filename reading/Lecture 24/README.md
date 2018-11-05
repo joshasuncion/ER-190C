@@ -1,0 +1,1 @@
+For Lecture 24 we started support vector machines, ISLR Ch 9.1-9.4

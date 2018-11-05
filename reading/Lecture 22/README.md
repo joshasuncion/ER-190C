@@ -1,0 +1,1 @@
+For Lecture 22 we covered regression and classification trees, ISLR Ch 8.1
