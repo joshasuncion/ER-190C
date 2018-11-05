@@ -1,0 +1,680 @@
+\documentclass[mathserif, aspectratio=169]{beamer}
+
+\usepackage{movie15}
+\usepackage{psfrag,graphicx}
+\usepackage{amsmath}
+\usepackage[absolute,overlay]{textpos}
+
+\graphicspath{{figs/}}
+
+\usetheme{Boadilla}
+\makeatother
+\setbeamertemplate{footline}[frame number]
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{amsthm}  
+\usepackage{bm}
+\usepackage{lipsum}
+\usepackage[linesnumbered, ruled]{algorithm2e}
+\usepackage{color}
+\newtheorem{assumption}{Assumptions}
+\newtheorem{prop}{Proposition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{sol}{Decentralized Solution}
+\newtheorem{thresh}{$\epsilon$-thresholding}
+\definecolor{light-gray}{gray}{0.8}
+\usepackage{textcomp}
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+\makeatletter
+\setbeamertemplate{navigation symbols}{}
+
+
+
+\title[Lecture 22] % (optional, use only with long paper titles)
+{Data, Environment and Society: \\{Lecture 22: Classification and regression trees}}
+
+
+%\subtitle
+%{Include Only If Paper Has a Subtitle}
+
+\author[ER190C: Data, Environment and Society] 
+{Instructor: Duncan Callaway\\
+GSI: Seigi Karasaki} 
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+%\logo{
+%\includegraphics[width=1.5cm,height=1.5cm,keepaspectratio]{uvic_logo_h.jpg}
+%}
+\vspace{-20mm}
+\institute[UC Berkeley] % (optional, but mostly needed)
+ {\small{ \bf November 6, 2018}}
+
+
+\date[November 6, 2018]
+
+\begin{document}
+
+\frame{
+  \titlepage
+}
+
+
+\begin{frame}{Today's objectives}
+
+\begin{columns}
+
+\column{0.5\textwidth}
+
+\textbf{Today's objectives}
+\begin{itemize}
+\item Introduction to regression trees
+\begin{itemize}
+\item Terminology
+\item How they are built
+\end{itemize}
+\end{itemize}
+
+\textbf{Reading}
+\begin{itemize}
+\item Today: ISLR Ch. 8.1
+\itme Thursday: ISLR Ch 8.2
+\end{itemize}
+
+\textbf{Announcements}
+\begin{itemize}
+\item The schedule slipped a bit...
+\begin{itemize}
+\item ...so no HW assigned this week.
+\item ...and you can have an extra week with HW9
+\end{itemize}
+\end{itemize}
+
+
+\column{0.5\textwidth}
+\vspace{-10mm}
+\begin{figure}
+\includegraphics[width=\textwidth]{decision_tree}
+\caption*{\footnotesize https://thenexttobestblogever.wordpress.com/2009/11/07/problem-solving-flowchart-2/}
+\end{figure}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+
+\begin{columns}
+\column{0.5\textwidth}
+\begin{center}
+{\LARGE Regression trees}
+\end{center}
+\column{0.5\textwidth}
+\includegraphics[height=\textheight]{NYT_tree}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Basic idea for regression trees}
+
+\begin{center}
+All we are doing is ``splitting'' the observations into regions and averaging the dependent variable within each region.\\~\\
+\pause
+
+Doing predictions with the model just involves locating a set of predictors in a region, then setting the response variable equal to the average from the training data in that region.  \\~\\
+\pause
+
+Big decision in regression trees: \textit{What are the regions we should use?}
+
+\end{center}\end{frame}
+
+\begin{frame}{Example, from the textbook}
+
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\includegraphics[height=0.65\textheight]{simple_tree}
+\caption*{}
+\end{figure}
+
+\column{0.5\textwidth}
+``Hitters'' data from ISLR.  \\~\\
+
+263 major league players stats.  \\~\\
+
+Here, this tree is ``spliting'' on two variables -- years in league and number of hits\\~\\
+
+The numbers at the ends are the average (log-transformed) average salaries for players \\~\\
+
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{Example, from the textbook, ctd}
+
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\includegraphics[height=0.5\textheight]{simple_partitioned_space}
+\caption*{}
+\end{figure}
+\column{0.5\textwidth}
+
+\begin{align*}
+R_1 &= \{X|\text{years}<4.5\}\\
+R_2 &= \{X|\text{years}\ge 4.5, \text{hits}<117.5 \}\\
+R_3 &= \{X|\text{years}\ge 4.5, \text{hits}\ge 117.5\}
+\end{align*}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}{Terminology}
+
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\includegraphics[height=0.65\textheight]{simple_tree}
+\caption*{}
+\end{figure}
+
+\column{0.5\textwidth}
+
+
+Each region $R_i$ is a \textit{terminal node}, or \textit{leaf}\\~\\
+
+Each numeric value at which a split happens is an \textit{internal node} \\~\\
+
+Segments connecting nodes (terminal or internal) are...\pause \textit{branches}\\~\\
+
+\pause
+The numbers at the end of the branches are...\pause \textit{leaves}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{Regression trees -- basic approach}
+
+\begin{enumerate}
+\item Divide the \textit{predictor} space into non-overlapping regions
+\item Within each region, the prediction is just the average of the training data.
+\end{enumerate}
+
+\pause
+
+Two Basic Questions:
+
+\begin{enumerate}
+\item Where should I put the internal nodes?
+\item How many regions should there be?
+\end{enumerate}
+
+The answers are, as it turns out, really simple.  
+
+\end{frame}
+
+\begin{frame}{Where to put the internal nodes?}
+First, for simplicity, the nodes are structured to make rectangles in the predictor space.  
+
+\end{frame}
+
+\begin{frame}{Which region and split location to choose first?}
+Let 
+\begin{itemize}
+\item $j$ index predictor variables
+\item $s$ denote the location of the split within the region
+\end{itemize}
+Then all splits can be described as:
+\begin{align*}
+R_1(j,s) = \{X|X_j<s\} \text{ and } R_2(j,s) = \{X|X_j\ge s\} 
+\end{align*}
+
+Then we partition any region by choosing $j$ and $s$ as follows:
+
+\begin{align*}
+\{j,s\} = \arg \min_{j\in J, s\in X_j} \sum_{i:x_i\in R_1(j,s)} (y_i-\hat{y}_{R_1})^2 + \sum_{i:x_i\in R_2(j,s)} (y_i-\hat{y}_{R_2})^2
+\end{align*}
+where $\hat{y}_{R_1}$ is the mean of all response variables in region 1.  \\~\\
+
+It would be tedious to identify $j$ and $s$ by hand, but it's actually very quick computationally.  
+\end{frame}
+
+\begin{frame}{Ok, we've split one predictor in two.  Now what?}
+
+After you've chosen the first partition, then do splits separately within each of the two identified regions.  \\~\\
+
+Choose the best split from among all possible splits of those two regions (you'll only wind up splitting one additional region).  \textbf{Now we'll have three regions.}\\~\\
+
+Choose the best split from among all possible splits of those three, again just splitting one additional region.  \textbf{Now we'll have four regions.}\\~\\
+
+Repeat this process until you reach a stopping criterion -- typically a maximum number of observations in each region.  \\~\\ \textbf{Call the resulting tree $T_0$.} \\~\\
+
+\textbf{We call this approach ``greedy''} because when we do the first partition we're not thinking ahead to future partitions to evaluate it.  
+\end{frame}
+
+\begin{frame}{One of these doesn't belong...}
+
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{partition_examples}
+\caption*{}
+\end{figure}
+
+\vspace*{-10mm}
+
+Q:  Which picture results from successively splitting the regions into values greater or less than predictor values?\\~\\
+\pause
+A: The right one.  The left one is not possible with simple splitting.  
+\end{frame}
+
+
+\begin{frame}{A five region example... with two dimensional predictor space}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{five_region_ex}
+\caption*{}
+\end{figure}
+\end{frame}
+
+\begin{frame}{What do we call it?}
+
+The process of splitting regions over and over is called...
+
+\begin{center}
+\textbf{``recursive binary splitting''}
+\end{center}
+
+You can also call it a \textbf{``top-down greedy'}' approach.  \\~\\
+
+Because it's ``greedy'' we can't be sure that the splits we're getting are the best possible splits.  
+
+\end{frame}
+
+\begin{frame}{Why binary?}
+In other words, why not multiway splits?\\~\\
+
+\pause
+In general multiway splits fragment the data too quickly, leaving insufficient data at the next level down\\~\\
+
+Since we do the binary splitting recursively, we get the same flexibility as a multiway split, since a region can be split a second time later.
+\end{frame}
+
+\begin{frame}{Example $T_0$}
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{complex_tree}
+\caption*{}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Important note}
+Recursive binary splitting, at least as presented here, does not consider standard errors in the splitting process.  \\~\\
+
+An alternative (improved?) splitting rule would only consider splits where the standard errors of the means in the candidate regions are not overlapping.\\~\\
+
+Something similar is accomplished by stopping the splits when the leaves get small (the standard approach), but why not take the formality of a standard error test?
+\end{frame}
+
+\begin{frame}{When will we test?}
+
+All the steps above involve model \textit{building}.  We have yet to evaluate different models against one another.  First let's build the candidate models, then we can evaluate.
+\end{frame}
+
+\begin{frame}{\textbf{Step 1: } ``cost complexity pruning''}
+
+We'll test models that are \textbf{subtrees} of $T_0$. (trees that are the same as $T_0$ except they are missing some internal nodes and branches).\\~\\
+
+We identify subtrees using \textbf{cost-complexity pruning} a.k.a. weakest link pruning:
+
+\begin{itemize}
+\item To get the first subtree, evaluate model performance for all subtrees with one leaf removed from $T_0$.  Choose the best one, call it $T_1$.  
+\begin{itemize}
+\item $R^2$ works for measuring performance
+\item ...but not for categorical variables, stay tuned!
+\end{itemize}
+\item Then evaluate performance for all models with one leaf removed from $T_1$.  Choose the best, call it $T_2$.  And so on.  \\~\\
+\end{itemize}
+
+\pause
+
+Smart researchers have shown that, given a tree, cost complexity pruning identifies the best subtrees.\\~\\
+
+That is, this ``greedy'' approach is an optimal \textit{pruning} strategy.  (But recursive binary splitting is not always optimal for growth.)
+
+\end{frame}
+
+\begin{frame}{\textbf{Step 2: } Tune up your $\alpha$}
+Take your set of subtrees, $T_0$ through $T_{N-2}$.  Call $|T|$ the number of terminal nodes in the tree.\\~\\
+
+For a given $\alpha$, \textit{one} of the $T_i$ will minimize :
+\begin{align*}
+\sum_{m=1}^{|T|} \sum_{x_i\in R_m} (y_i-\hat{y}_{R_m})^2+\alpha|T|
+\end{align*}
+
+\begin{itemize}
+\item $\alpha=0$ will choose $T_0$, the biggest tree.
+\item As $\alpha$ grows you'll choose successively smaller trees.  \\~\\
+\end{itemize}
+
+Fill in the blank:  As $\alpha$ increases, bias goes \underline{\uncover<2->{\textbf{up}}} and variance goes \underline{\uncover<2->{\textbf{down}}} \\~\\ \pause
+
+Bigger $\alpha$ means fewer leaves, which means more bias but less variance.   \\~\\
+
+Though it seems unnecessary to define $\alpha$ (why not just evaluate all subtrees?), we'll see it's useful for cross validation.  
+\end{frame}
+
+\begin{frame}{The (cross validation) process}
+
+Basic steps:
+\begin{enumerate}
+\item[\textbf{a.}] Grow a large tree via recursive binary splitting.  ``Large'' means each leaf has some pre-specified maximum number of observations (e.g. 5)
+\item[\textbf{b.}] Then ``prune'' the tree to get a sequence of subtrees.  Choose one that minimizes $\sum_{m=1}^{|T|} \sum_{x_i\in R_m} (y_i-\hat{y}_{R_m})^2+\alpha|T|$ for each of a range of values of $\alpha$.\\~\\
+\end{enumerate}
+\pause
+The cross validation process:
+\begin{enumerate}
+\item Split your data into $K$ folds.  
+\item Withhold each fold and Repeat \textbf{a.} and \textbf{b.} 
+\item \textit{For each value of }$\alpha$, evaluate the error on the withheld fold, then average the error across all folds.
+\item Choose the $\alpha$ that gives the lowest cross validated error, 
+\item Build your final model with the chosen $\alpha$ with \textit{all the data.}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Why use $\alpha$?}
+
+Why didn't we just evaluate cross validated error for each tree size?\\~\\
+
+That is, is $\alpha$ just overly complicating things?\\~\\
+
+\pause
+
+Ans: Sometimes it might.  But it may be that across different folds we'd choose different subtrees.  $\alpha$ does a better job of tuning the bias-variance tradeoff.  \\~\\
+
+But: out of convenience the book \textit{displays} results in terms of tree size rather than $\alpha$.  Argh!
+
+\end{frame}
+
+\begin{frame}{Results on Hitters data}
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{MSE_vs_treesize}
+\caption*{``Training'' data are 132 of the 263 original observations.  Test are the reminaining.  CV is done just on the training data -- that is the training data are split into the K folds (6 in this case).  The test data are just used for additional evaluation.}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Questions}
+
+Are regression trees supervised or unsupervised learning? \pause  Supervised!\\~\\
+
+\pause Do regression trees utilize linear regression? \pause Nope.  \\~\\
+
+What do you think their advantages are (vs LASSO or nonlinear models...)? \pause
+
+\begin{itemize}
+\item Easy to explain and non-experts can understand the results.
+\item They're more like human decision-making.  Doctors like them.
+\item They easily handle qualitative predictors -- no need for dummies.
+\end{itemize}
+
+\pause How about some disadvantages? \pause
+
+\begin{itemize}
+\item As described, they don't usually provide the same predictive power that the other tools we've studied can.
+\item They can be pretty sensitive to small changes in the data. 
+\item Recursive binary splitting may generate a suboptimal tree (like forward / backward model selection).  Things later in the chapter address this.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Example: Test scores and pollution}
+
+\includegraphics[width=\textwidth]{stingone_etal}
+\end{frame}
+
+\begin{frame}{Does pollution change cognitive ability?}
+
+Stingone et al point out that few studies have looked at the effects of multiple pollutants at once
+
+Key data:
+\begin{itemize}
+\item Kindergarten math scores from National Center of Education Statistics Early Childhood Longitudinal Study
+\item Census tract estimates of 104 toxic pollutants from U.S. Environmental Protection Agency's National Air Toxics Assessment (NATA)
+\item Other confounders including mother age, marital status, hhld income, etc.  (Used in second stage \textit{after} tree building.)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Stingone \textit{et al} two step approach}
+
+\begin{enumerate}
+\item Build trees for test score outcome based on pollutant exposure (what we'll focus on here)
+\item Run basic multiple linear regression \textit{within} each leaf to identify the effect of pollutants on test scores.  (We won't cover this part.)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Why trees?  Stingone \textit{et al's} justification}
+
+\begin{itemize}
+\item Easy interpretability in terms of understandable trees and/or rules, 
+\item Ability to identify non-linear relationships between the features (exposures) and the outcome (math scores), 
+\item Possibility of identifying interactions among the features (exposures), 
+\item Making no/minimal assumptions about data distributions, 
+\item Tolerance to missing values and outliers in the data, 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example result}
+
+\includegraphics[width=\textwidth]{stingone_tree_totalpop}
+
+Constructed with 10-fold cross-validation.  Also used additional random partitioning -- stay tuned.\\~\\
+
+Note: $R^2$ values are low -- in this case 0.067.  Also note that in some cases \textit{lower} pollutant levels partition into \textit{lower} test scores.  Is this meaningful?
+\end{frame}
+
+
+\begin{frame}{A trick that Stingone \textit{et al }used}
+
+They note that Trees are: 
+\begin{itemize}
+\item Prone to overfitting the (training) data, 
+\item Sensitive to small perturbations in the data and/or model/algorithm parameters
+\end{itemize}
+
+Their approach to manage this is to build a lot of different trees using random partitions of the data.  \\~\\
+Their approach is a little unconventional (for  reasons they don't provide).\\~\\
+
+Instead, on Thursday we'll talk about formal strategies to deal with this sensitivity -- boosting, bagging and random forests.  
+
+\end{frame}
+
+\begin{frame}
+\begin{center}
+{\LARGE Classification trees}
+\end{center}
+\end{frame}
+
+\begin{frame}{What's a classification tree?}
+
+As you might imagine, it's just like a regression tree, but we use it to predict a categorical or qualitative variable.  \\~\\
+
+Rather than setting the prediction equal to the mean, the prediction is:
+\pause
+\begin{center}
+ \textit{the most commonly occurring class within the partition.  \\~\\}
+\end{center}
+
+However we still use recursive binary splitting and cost-complexity pruning\\~\\
+
+Though the \textit{criteria} for splitting and pruning will have to change
+
+\end{frame}
+
+\begin{frame}{What's the error?}
+
+The typical error, $\text{RSS} = \sum_{i=1}^N (y_i-\hat{y}_i)^2$ won't work.  \\~\\
+
+Alternatives?  Let's start by defining 
+\begin{align*}
+p_{mk} = \text{ fraction of observations belonging to class $k$ in region $m$.}
+\end{align*}
+Then a simple measure is:
+
+\begin{center}
+\textit{Classification error rate} = how many training observations don't fall into the assigned class.   \\~\\
+\end{center}
+
+ Within-region this is simply:
+
+\begin{align*}
+E_m = 1- \max_k (\hat{p}_{mk})
+\end{align*}
+\end{frame}
+
+\begin{frame}{The trouble with Classification Error}
+
+Suppose you have a two-class problem with 400 observations in each class.  Consider two possible splits (S1 and S2):
+\begin{itemize}
+\item[S1:] $R_1: (100,300)$, $R_2: (300,100)\Rightarrow \text{ weighted error } E_{S1} = 0.25$
+\item[S2:]  $R_1: (200,400)$, $R_2: (200,0)\Rightarrow \text{ weighted error }E_{S2} = 0.25$\\~\\
+\end{itemize}
+
+Can you make a case for one of these being preferable to the other?\\~\\
+
+\pause
+
+S2 has a ``pure'' split, meaning there are \textit{no} errors in one of the splits.  You won't need to split this region any further.  
+
+\end{frame}
+
+\begin{frame}{Alternative errors}
+
+Remember, $p_{mk} =$  fraction of observations in class $k$ in region $m$.
+
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\includegraphics[width=0.9\textwidth]{E_vs_G_vs_D}
+\vspace*{-3mm}
+\caption*{\scriptsize (Measures for two-class classification; $p$ is the proportion in class 2. Cross-entropy has been scaled to pass through (0.5, 0.5).)}
+\end{figure}
+\column{0.5\textwidth}
+\begin{align*}
+E_m &= 1- \max_k (\hat{p}_{mk})\\
+G_m &= \sum_{k=1}^K \hat{p}_{mk}(1-\hat{p}_{mk})\quad\text{``Gini''}\\
+D_m &= -\sum_{k=1}^K \hat{p}_{mk}\log{ \hat{p}_{mk}}\quad\text{``Entropy''}
+\end{align*}
+\end{columns}
+\vspace{5mm}
+$G$ and $D$ have two advantages:
+\begin{enumerate}
+\item Differentiable everywhere -- good for optimization
+\item Score better for ``pure'' splits
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Which error rate to use?}
+
+\begin{itemize}
+\item Since they are more ``sensitive'' to pure splits, it's better to use either Gini or cross-entropy when \textit{growing} the tree. 
+\item Any of the three measures can be used for cost-complexity pruning.  Common practice is to use the misclassification rate.
+\begin{itemize}
+\item That's because prediction is usually the final goal, and misclassification measures ability to do that.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{A spam example}
+Email data set, donated by George Forman from HP.  4601 messages.  
+
+%\texttt{spam} = 1, \texttt{email} = 0
+
+\begin{itemize}
+\item 48 quantitative predictors: the percentage of words in the email that match a given word. Examples include business, address, internet, free, and george. (These could be customized for individual users.)
+\item 6 quantitative predictors: the percentage of characters in the email that match a given character. The characters are ch;, ch(, ch[, ch!, ch\$, and ch\#.
+\item The average length of uninterrupted sequences of capital letters: CAPAVE.
+\item The length of the longest uninterrupted sequence of capital letters: CAPMAX.
+\item The sum of the length of uninterrupted sequences of capital letters: CAPTOT.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{}
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{spam_error}
+\caption*{Blue: test data set error indexed by tree size.  Orange: 10-fold CV error indexed by $\alpha$.  Minimum (within 1 standard error) is at $|T|=17$.  Figure from ESLII}
+\end{figure}
+\end{frame}
+
+\begin{frame}{}
+\begin{figure}
+\includegraphics[height=0.93\textheight]{spam_tree}
+\caption*{ Figure from ESLII}
+\end{figure}
+
+
+\begin{textblock*}{50mm}(75mm,55mm)
+\begin{exampleblock}{}
+\scriptsize
+\begin{itemize}
+\item Split variables are shown in blue on the branches, 
+
+\item Classification is shown in every node in red or green.
+
+\item The numbers under the terminal nodes indicate misclassification rates on the test data.
+\end{itemize}
+
+\end{exampleblock}
+\end{textblock*}
+
+\end{frame}
+
+\begin{frame}{A zoom in}
+
+\vspace*{-10mm}
+\begin{figure}
+\includegraphics[height=1.5\textheight]{spam_tree}
+\caption*{ Figure from ESLII}
+\end{figure}
+\end{frame}
+
+\begin{frame}{When are trees better than linear models?}
+\begin{figure}
+\includegraphics[height=0.9\textheight]{tree_vs_linear_for_classification}
+\caption*{}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Reminder: advantages and disadvantages}
+Advantages
+
+\begin{itemize}
+\item Easy to explain and non-experts can understand the results.
+\item They're more like human decision-making.  Doctors like them.
+\item They easily handle qualitative predictors -- no need for dummies.
+\end{itemize}
+
+Disadvantages
+
+\begin{itemize}
+\item As described, they don't usually provide the same predictive power that the other tools we've studied can.
+\item They can be pretty sensitive to small changes in the data. 
+\item Recursive binary splitting may generate a suboptimal tree (like forward / backward model selection).  Things later in the chapter address this.
+\end{itemize}
+\end{frame}
+
+\end{document}
