@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 NOV 2018 12:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  6 NOV 2018 09:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1037,72 +1037,69 @@ LaTeX Info: Redefining \includegraphics on input line 74.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (./22 CART.nav)
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 78.
-
-[1
-Non-PDF special ignored!
-
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 105.
+LaTeX Font Info:    Try loading font information for U+msa on input line 87.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 105.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+LaTeX Font Info:    Try loading font information for U+msb on input line 87.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<decision_tree.png, id=25, 616.55344pt x 719.68875pt>
+<decision_tree.png, id=13, 616.55344pt x 719.68875pt>
 File: decision_tree.png Graphic file (type png)
  <use decision_tree.png>
-Package pdftex.def Info: decision_tree.png used on input line 105.
-(pdftex.def)             Requested size: 216.67201pt x 252.91612pt.
+Package pdftex.def Info: decision_tree.png used on input line 87.
+(pdftex.def)             Requested size: 173.33496pt x 202.32411pt.
 
-Overfull \hbox (47.3357pt too wide) in paragraph at lines 105--105
-[][]|\OT1/cmss/m/n/9 https://thenexttobestblogever.wordpress.com/2009/11/07/pro
+Overfull \hbox (8.59854pt too wide) in paragraph at lines 87--87
+[][]|\OT1/cmss/m/n/6 https://thenexttobestblogever.wordpress.com/2009/11/07/pro
 blem- 
  []
 
 
-Overfull \vbox (53.96208pt too high) detected at line 105
+Overfull \vbox (3.7493pt too high) detected at line 87
  []
 
-[2
 
- <./decision_tree.png>] <NYT_tree.jpg, id=33, 462.528pt x 734.2632pt>
-File: NYT_tree.jpg Graphic file (type jpg)
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
+(Font)              size <5> substituted on input line 87.
 
-<use NYT_tree.jpg>
-Package pdftex.def Info: NYT_tree.jpg used on input line 117.
-(pdftex.def)             Requested size: 153.7498pt x 244.0748pt.
+[1
+Non-PDF special ignored!
 
-Overfull \vbox (1.0pt too high) detected at line 117
- []
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./decis
+ion_tree.png>]
+<RTree_image.png, id=26, 1204.5pt x 808.01875pt>
+File: RTree_image.png Graphic file (type png)
+ <use RTree_image.png>
+Package pdftex.def Info: RTree_image.png used on input line 130.
+(pdftex.def)             Requested size: 216.67201pt x 145.35078pt.
+ [2
 
-[3
+ <./RTree_image.png (PNG copy)>] [3
 
- <./NYT_tree.jpg>] [4
+] [4
 
 ] [5
 
 ] [6
 
 ]
-<simple_tree.pdf, id=56, 157.75337pt x 161.84625pt>
+<simple_tree.pdf, id=55, 157.75337pt x 161.84625pt>
 File: simple_tree.pdf Graphic file (type pdf)
  <use simple_tree.pdf>
-Package pdftex.def Info: simple_tree.pdf used on input line 152.
+Package pdftex.def Info: simple_tree.pdf used on input line 177.
 (pdftex.def)             Requested size: 154.63574pt x 158.64713pt.
 
 [7
 
  <./simple_tree.pdf>]
-<simple_partitioned_space.pdf, id=136, 212.15398pt x 178.5324pt>
+<simple_partitioned_space.pdf, id=135, 212.15398pt x 178.5324pt>
 File: simple_partitioned_space.pdf Graphic file (type pdf)
 
 <use simple_partitioned_space.pdf>
-Package pdftex.def Info: simple_partitioned_space.pdf used on input line 171.
+Package pdftex.def Info: simple_partitioned_space.pdf used on input line 197.
 (pdftex.def)             Requested size: 145.0203pt x 122.0374pt.
  [8
 
@@ -1110,21 +1107,21 @@ Package pdftex.def Info: simple_partitioned_space.pdf used on input line 171.
 File: simple_tree.pdf Graphic file (type pdf)
 
 <use simple_tree.pdf>
-Package pdftex.def Info: simple_tree.pdf used on input line 196.
+Package pdftex.def Info: simple_tree.pdf used on input line 222.
 (pdftex.def)             Requested size: 154.63574pt x 158.64713pt.
  [9
 
 ]
 File: simple_tree.pdf Graphic file (type pdf)
  <use simple_tree.pdf>
-Package pdftex.def Info: simple_tree.pdf used on input line 196.
+Package pdftex.def Info: simple_tree.pdf used on input line 222.
 (pdftex.def)             Requested size: 154.63574pt x 158.64713pt.
  [10
 
 ]
 File: simple_tree.pdf Graphic file (type pdf)
  <use simple_tree.pdf>
-Package pdftex.def Info: simple_tree.pdf used on input line 196.
+Package pdftex.def Info: simple_tree.pdf used on input line 222.
 (pdftex.def)             Requested size: 154.63574pt x 158.64713pt.
 
 [11
@@ -1132,7 +1129,7 @@ Package pdftex.def Info: simple_tree.pdf used on input line 196.
 ]
 File: simple_tree.pdf Graphic file (type pdf)
  <use simple_tree.pdf>
-Package pdftex.def Info: simple_tree.pdf used on input line 196.
+Package pdftex.def Info: simple_tree.pdf used on input line 222.
 (pdftex.def)             Requested size: 154.63574pt x 158.64713pt.
  [12
 
@@ -1146,57 +1143,56 @@ Package pdftex.def Info: simple_tree.pdf used on input line 196.
 
 ] [17
 
+] [18
+
 ]
-<partition_examples.pdf, id=247, 333.57916pt x 148.69875pt>
+<partition_examples.pdf, id=251, 333.57916pt x 148.69875pt>
 File: partition_examples.pdf Graphic file (type pdf)
 
 <use partition_examples.pdf>
-Package pdftex.def Info: partition_examples.pdf used on input line 269.
+Package pdftex.def Info: partition_examples.pdf used on input line 308.
 (pdftex.def)             Requested size: 346.67653pt x 154.54318pt.
- [18
+ [19
 
  <./partition_examples.pdf>]
 File: partition_examples.pdf Graphic file (type pdf)
 
 <use partition_examples.pdf>
-Package pdftex.def Info: partition_examples.pdf used on input line 269.
+Package pdftex.def Info: partition_examples.pdf used on input line 308.
 (pdftex.def)             Requested size: 346.67653pt x 154.54318pt.
- [19
+ [20
 
 ]
-<five_region_ex.pdf, id=306, 339.58589pt x 166.26436pt>
+<five_region_ex_map.pdf, id=310, 154.73398pt x 147.40771pt>
+File: five_region_ex_map.pdf Graphic file (type pdf)
+
+<use five_region_ex_map.pdf>
+Package pdftex.def Info: five_region_ex_map.pdf used on input line 315.
+(pdftex.def)             Requested size: 130.00452pt x 123.85986pt.
+
+<five_region_ex.pdf, id=311, 339.58589pt x 166.26436pt>
 File: five_region_ex.pdf Graphic file (type pdf)
 
 <use five_region_ex.pdf>
-Package pdftex.def Info: five_region_ex.pdf used on input line 278.
-(pdftex.def)             Requested size: 433.34402pt x 212.18086pt.
+Package pdftex.def Info: five_region_ex.pdf used on input line 315.
+(pdftex.def)             Requested size: 303.3395pt x 148.52533pt.
+ [21
 
-Overfull \vbox (29.97957pt too high) detected at line 278
- []
-
-[20
-
- <./five_region_ex.pdf>] [21
-
-] [22
+ <./five_region_ex_map.pdf> <./five_region_ex.pdf>] [22
 
 ] [23
 
-]
-<complex_tree.pdf, id=373, 316.40851pt x 281.78928pt>
+] [24
+
+] <complex_tree.pdf, id=425, 316.40851pt x 281.78928pt>
 File: complex_tree.pdf Graphic file (type pdf)
- <use complex_tree.pdf>
-Package pdftex.def Info: complex_tree.pdf used on input line 308.
-(pdftex.def)             Requested size: 303.3395pt x 270.14914pt.
 
-Overfull \vbox (87.94785pt too high) detected at line 308
- []
+<use complex_tree.pdf>
+Package pdftex.def Info: complex_tree.pdf used on input line 349.
+(pdftex.def)             Requested size: 246.65761pt x 219.66582pt.
+ [25
 
-[24
-
- <./complex_tree.pdf>] [25
-
-] [26
+ <./complex_tree.pdf>] [26
 
 ] [27
 
@@ -1206,7 +1202,8 @@ Overfull \vbox (87.94785pt too high) detected at line 308
 
 ] [30
 
-] [31
+]
+[31
 
 ] [32
 
@@ -1214,15 +1211,14 @@ Overfull \vbox (87.94785pt too high) detected at line 308
 
 ] [34
 
-]
-<MSE_vs_treesize.pdf, id=489, 237.42062pt x 163.88637pt>
+] <MSE_vs_treesize.pdf, id=538, 237.42062pt x 163.88637pt>
 File: MSE_vs_treesize.pdf Graphic file (type pdf)
 
 <use MSE_vs_treesize.pdf>
-Package pdftex.def Info: MSE_vs_treesize.pdf used on input line 403.
+Package pdftex.def Info: MSE_vs_treesize.pdf used on input line 450.
 (pdftex.def)             Requested size: 346.67653pt x 239.3171pt.
 
-Overfull \vbox (81.1158pt too high) detected at line 403
+Overfull \vbox (81.1158pt too high) detected at line 450
  []
 
 [35
@@ -1242,10 +1238,10 @@ Overfull \vbox (81.1158pt too high) detected at line 403
 ] [42
 
 ]
-<stingone_etal.png, id=573, 836.12375pt x 387.4475pt>
+<stingone_etal.png, id=622, 836.12375pt x 387.4475pt>
 File: stingone_etal.png Graphic file (type png)
  <use stingone_etal.png>
-Package pdftex.def Info: stingone_etal.png used on input line 432.
+Package pdftex.def Info: stingone_etal.png used on input line 479.
 (pdftex.def)             Requested size: 433.34402pt x 200.8117pt.
 
 [43
@@ -1257,23 +1253,33 @@ Package pdftex.def Info: stingone_etal.png used on input line 432.
 ] [46
 
 ]
-<stingone_tree_totalpop.pdf, id=598, 419.94507pt x 187.75014pt>
+<stingone_tree_totalpop.pdf, id=647, 419.94507pt x 187.75014pt>
 File: stingone_tree_totalpop.pdf Graphic file (type pdf)
 
 <use stingone_tree_totalpop.pdf>
-Package pdftex.def Info: stingone_tree_totalpop.pdf used on input line 473.
+Package pdftex.def Info: stingone_tree_totalpop.pdf used on input line 520.
 (pdftex.def)             Requested size: 433.34402pt x 193.74289pt.
 
-Overfull \vbox (43.67079pt too high) detected at line 473
+Overfull \vbox (43.67079pt too high) detected at line 520
  []
 
 [47
 
  <./stingone_tree_totalpop.pdf>] [48
 
-] [49
+]
+<NYT_tree.jpg, id=694, 462.528pt x 734.2632pt>
+File: NYT_tree.jpg Graphic file (type jpg)
+ <use NYT_tree.jpg>
+Package pdftex.def Info: NYT_tree.jpg used on input line 547.
+(pdftex.def)             Requested size: 153.7498pt x 244.0748pt.
 
-] [50
+Overfull \vbox (1.0pt too high) detected at line 547
+ []
+
+[49
+
+ <./NYT_tree.jpg>] [50
 
 ] [51
 
@@ -1284,77 +1290,83 @@ Overfull \vbox (43.67079pt too high) detected at line 473
 ] [54
 
 ]
-<E_vs_G_vs_D.pdf, id=675, 247.77809pt x 147.1908pt>
+<E_vs_G_vs_D.pdf, id=726, 247.77809pt x 147.1908pt>
 File: E_vs_G_vs_D.pdf Graphic file (type pdf)
  <use E_vs_G_vs_D.pdf>
-Package pdftex.def Info: E_vs_G_vs_D.pdf used on input line 574.
+Package pdftex.def Info: E_vs_G_vs_D.pdf used on input line 626.
 (pdftex.def)             Requested size: 195.00348pt x 115.84373pt.
-
-Overfull \vbox (13.24548pt too high) detected at line 574
- []
 
 [55
 
- <./E_vs_G_vs_D.pdf>] [56
+ <./E_vs_G_vs_D.pdf>]
+File: E_vs_G_vs_D.pdf Graphic file (type pdf)
+ <use E_vs_G_vs_D.pdf>
+Package pdftex.def Info: E_vs_G_vs_D.pdf used on input line 648.
+(pdftex.def)             Requested size: 195.00348pt x 115.84373pt.
+ [56
+
+] [57
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+cmss on input line 600
-.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmss.fd
-File: ts1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [57
-
-]
-<spam_error.pdf, id=750, 309.16293pt x 227.71254pt>
-File: spam_error.pdf Graphic file (type pdf)
- <use spam_error.pdf>
-Package pdftex.def Info: spam_error.pdf used on input line 607.
-(pdftex.def)             Requested size: 346.67653pt x 255.34554pt.
-
-Overfull \vbox (62.27074pt too high) detected at line 607
- []
-
-[58
-
- <./spam_error.pdf>] <spam_tree.pdf, id=790, 364.07738pt x 384.29262pt>
-File: spam_tree.pdf Graphic file (type pdf)
-
-<use spam_tree.pdf>
-Package pdftex.def Info: spam_tree.pdf used on input line 630.
-(pdftex.def)             Requested size: 215.04823pt x 226.98776pt.
-
-Overfull \vbox (21.91296pt too high) detected at line 630
- []
-
-[59
-
- <./spam_tree.pdf>]
-File: spam_tree.pdf Graphic file (type pdf)
- <use spam_tree.pdf>
-Package pdftex.def Info: spam_tree.pdf used on input line 639.
-(pdftex.def)             Requested size: 346.8604pt x 366.1122pt.
-
-Overfull \vbox (155.45816pt too high) detected at line 639
- []
-
-[60
-
-]
-<tree_vs_linear_for_classification.pdf, id=835, 250.98045pt x 242.55098pt>
+<tree_vs_linear_for_classification.pdf, id=799, 250.98045pt x 242.55098pt>
 File: tree_vs_linear_for_classification.pdf Graphic file (type pdf)
 
 <use tree_vs_linear_for_classification.pdf>
 Package pdftex.def Info: tree_vs_linear_for_classification.pdf used on input li
-ne 646.
+ne 667.
 (pdftex.def)             Requested size: 227.3011pt x 219.66582pt.
 
-Overfull \vbox (37.46452pt too high) detected at line 646
+Overfull \vbox (37.46452pt too high) detected at line 667
  []
 
-[61
+[58
 
- <./tree_vs_linear_for_classification.pdf>] [62
+ <./tree_vs_linear_for_classification.pdf>] [59
+
+] [60
+
+]
+LaTeX Font Info:    Try loading font information for TS1+cmss on input line 705
+.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmss.fd
+File: ts1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+) [61
+
+]
+<spam_error.pdf, id=865, 309.16293pt x 227.71254pt>
+File: spam_error.pdf Graphic file (type pdf)
+ <use spam_error.pdf>
+Package pdftex.def Info: spam_error.pdf used on input line 712.
+(pdftex.def)             Requested size: 346.67653pt x 255.34554pt.
+
+Overfull \vbox (62.27074pt too high) detected at line 712
+ []
+
+[62
+
+ <./spam_error.pdf>] <spam_tree.pdf, id=905, 364.07738pt x 384.29262pt>
+File: spam_tree.pdf Graphic file (type pdf)
+
+<use spam_tree.pdf>
+Package pdftex.def Info: spam_tree.pdf used on input line 735.
+(pdftex.def)             Requested size: 215.04823pt x 226.98776pt.
+
+Overfull \vbox (21.91296pt too high) detected at line 735
+ []
+
+[63
+
+ <./spam_tree.pdf>]
+File: spam_tree.pdf Graphic file (type pdf)
+ <use spam_tree.pdf>
+Package pdftex.def Info: spam_tree.pdf used on input line 744.
+(pdftex.def)             Requested size: 346.8604pt x 366.1122pt.
+
+Overfull \vbox (155.45816pt too high) detected at line 744
+ []
+
+[64
 
 ]
 \tf@nav=\write7
@@ -1373,11 +1385,11 @@ Package movie15 Warning: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 (movie15)                @@ superseded by `media9'.           @@
 (movie15)                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 666.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 666.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 745.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 745.
 (./22 CART.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 666.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 666.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 745.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 745.
 Package rerunfilecheck Info: File `"22 CART".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1391,13 +1403,13 @@ LaTeX Font Warning: Size substitutions with differences
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 20648 strings out of 492995
- 385402 string characters out of 6132704
- 598651 words of memory out of 5000000
- 23593 multiletter control sequences out of 15000+600000
- 22657 words of font info for 82 fonts, out of 8000000 for 9000
+ 20675 strings out of 492995
+ 385974 string characters out of 6132704
+ 596651 words of memory out of 5000000
+ 23615 multiletter control sequences out of 15000+600000
+ 22351 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,15n,63p,775b,4075s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,15n,63p,775b,4220s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm
 -super-ts1.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
@@ -1418,25 +1430,24 @@ ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texliv
 e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/
 2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2017/texmf-dist
-/fonts/type1/public/cm-super/sfss1095.pfb>
-Output written on "22 CART.pdf" (62 pages, 2277013 bytes).
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2017/texmf-di
+st/fonts/type1/public/cm-super/sfss1095.pfb>
+Output written on "22 CART.pdf" (64 pages, 2753903 bytes).
 PDF statistics:
- 989 PDF objects out of 1000 (max. 8388607)
- 798 compressed objects within 8 object streams
- 125 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1051 PDF objects out of 1200 (max. 8388607)
+ 851 compressed objects within 9 object streams
+ 129 named destinations out of 1000 (max. 500000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 
