@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 NOV 2018 05:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 NOV 2018 09:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"22 CART.tex"
-(./22 CART.tex
+**"23 Boosting, Bagging, Random Forests.tex"
+(./23 Boosting, Bagging, Random Forests.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/beamer.cls
@@ -705,7 +705,81 @@ Grid set 16 x 16 = 28.45274pt x 16.00467pt
 \TP@tbargs=\toks43
 \TP@prevdepth=\dimen260
 TextBlockOrigin set to 0pt x 0pt
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box56
 )
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen261
+\pgf@nodesepend=\dimen262
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen263
+\pgffor@skip=\dimen264
+\pgffor@stack=\toks44
+\pgffor@toks=\toks45
+))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count162
+\pgfplotmarksize=\dimen265
+)
+\tikz@lastx=\dimen266
+\tikz@lasty=\dimen267
+\tikz@lastxsaved=\dimen268
+\tikz@lastysaved=\dimen269
+\tikzleveldistance=\dimen270
+\tikzsiblingdistance=\dimen271
+\tikz@figbox=\box57
+\tikz@figbox@bg=\box58
+\tikz@tempbox=\box59
+\tikz@tempbox@bg=\box60
+\tikztreelevel=\count163
+\tikznumberofchildren=\count164
+\tikznumberofcurrentchild=\count165
+\tikz@fig@count=\count166
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count167
+\pgfmatrixcurrentcolumn=\count168
+\pgf@matrix@numberofcolumns=\count169
+)
+\tikz@expandcount=\count170
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeBo
 adilla.sty
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/themes/color/beamercolorth
@@ -722,15 +796,15 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen261
-\captionmargin@=\dimen262
-\captionwidth=\dimen263
-\caption@tempdima=\dimen264
-\caption@indent=\dimen265
-\caption@parindent=\dimen266
-\caption@hangindent=\dimen267
+\captionmargin=\dimen272
+\captionmargin@=\dimen273
+\captionwidth=\dimen274
+\caption@tempdima=\dimen275
+\caption@indent=\dimen276
+\caption@parindent=\dimen277
+\caption@hangindent=\dimen278
 )
-\c@ContinuedFloat=\count162
+\c@ContinuedFloat=\count171
 Package caption Info: beamer document class.
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
@@ -738,8 +812,8 @@ Package caption Info: Hyperref support is turned off
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
-\c@subfigure=\count163
-\c@subtable=\count164
+\c@subfigure=\count172
+\c@subtable=\count173
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
@@ -751,11 +825,11 @@ LaTeX Info: Redefining \bm on input line 207.
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
-\c@lips@count=\count165
+\c@lips@count=\count174
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count166
+\c@AlgoLine=\count175
 \algocf@hangindent=\skip57
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/xspace.sty
@@ -779,41 +853,41 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \skiplength=\skip63
 \algomargin=\skip64
 \skipalgocfslide=\skip65
-\algowidth=\dimen268
-\inoutsize=\dimen269
-\inoutindent=\dimen270
-\interspacetitleruled=\dimen271
-\interspacealgoruled=\dimen272
-\interspacetitleboxruled=\dimen273
+\algowidth=\dimen279
+\inoutsize=\dimen280
+\inoutindent=\dimen281
+\interspacetitleruled=\dimen282
+\interspacealgoruled=\dimen283
+\interspacetitleboxruled=\dimen284
 \algocf@ruledwidth=\skip66
-\algocf@inoutbox=\box56
-\algocf@inputbox=\box57
+\algocf@inoutbox=\box61
+\algocf@inputbox=\box62
 \AlCapSkip=\skip67
 \AlCapHSkip=\skip68
 \algoskipindent=\skip69
-\algocf@nlbox=\box58
-\algocf@hangingbox=\box59
-\algocf@untilbox=\box60
+\algocf@nlbox=\box63
+\algocf@hangingbox=\box64
+\algocf@untilbox=\box65
 \algocf@skipuntil=\skip70
-\algocf@capbox=\box61
+\algocf@capbox=\box66
 \algoheightruledefault=\skip71
 \algoheightrule=\skip72
 \algotitleheightruledefault=\skip73
 \algotitleheightrule=\skip74
-\c@algocfline=\count167
-\c@algocfproc=\count168
-\c@algocf=\count169
-\algocf@algoframe=\box62
-\algocf@algobox=\box63
+\c@algocfline=\count176
+\c@algocfproc=\count177
+\c@algocf=\count178
+\algocf@algoframe=\box67
+\algocf@algobox=\box68
 )
-\c@assumption=\count170
-\c@prop=\count171
-\c@defn=\count172
-\c@thm=\count173
-\c@lem=\count174
-\c@cor=\count175
-\c@sol=\count176
-\c@thresh=\count177
+\c@assumption=\count179
+\c@prop=\count180
+\c@defn=\count181
+\c@thm=\count182
+\c@lem=\count183
+\c@cor=\count184
+\c@sol=\count185
+\c@thresh=\count186
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -898,31 +972,32 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 59.
+(hyperref)                removing `\\' on input line 57.
 
-(./22 CART.aux)
-\openout1 = `"22 CART.aux"'.
+(./23 Boosting, Bagging, Random Forests.aux)
+\openout1 = `"23 Boosting, Bagging, Random Forests.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 74.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 70.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    ... okay on input line 70.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -960,17 +1035,17 @@ LaTeX Font Info:    ... okay on input line 74.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count178
-\scratchdimen=\dimen274
-\scratchbox=\box64
-\nofMPsegments=\count179
-\nofMParguments=\count180
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count181
-\MPscratchDim=\dimen275
-\MPnumerator=\count182
-\makeMPintoPDFobject=\count183
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count187
+\scratchdimen=\dimen285
+\scratchbox=\box69
+\nofMPsegments=\count188
+\nofMParguments=\count189
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count190
+\MPscratchDim=\dimen286
+\MPnumerator=\count191
+\makeMPintoPDFobject=\count192
+\everyMPtoPDFconversion=\toks47
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -989,8 +1064,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box65
-Package hyperref Info: Link coloring OFF on input line 74.
+\AtBeginShipoutBox=\box70
+Package hyperref Info: Link coloring OFF on input line 70.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -998,15 +1073,16 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count184
+\c@section@level=\count193
 )
-LaTeX Info: Redefining \ref on input line 74.
-LaTeX Info: Redefining \pageref on input line 74.
-LaTeX Info: Redefining \nameref on input line 74.
+LaTeX Info: Redefining \ref on input line 70.
+LaTeX Info: Redefining \pageref on input line 70.
+LaTeX Info: Redefining \nameref on input line 70.
 
-(./22 CART.out) (./22 CART.out)
+(./23 Boosting, Bagging, Random Forests.out)
+(./23 Boosting, Bagging, Random Forests.out)
 \@outlinefile=\write6
-\openout6 = `"22 CART.out"'.
+\openout6 = `"23 Boosting, Bagging, Random Forests.out"'.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/translator/dicts/translato
@@ -1033,105 +1109,97 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 74.
+LaTeX Info: Redefining \includegraphics on input line 70.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- (./22 CART.nav)
-LaTeX Font Info:    Try loading font information for U+msa on input line 87.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 87.
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<decision_tree.png, id=13, 616.55344pt x 719.68875pt>
-File: decision_tree.png Graphic file (type png)
- <use decision_tree.png>
-Package pdftex.def Info: decision_tree.png used on input line 87.
-(pdftex.def)             Requested size: 173.33496pt x 202.32411pt.
-
-Overfull \hbox (8.59854pt too wide) in paragraph at lines 87--87
-[][]|\OT1/cmss/m/n/6 https://thenexttobestblogever.wordpress.com/2009/11/07/pro
-blem- 
- []
-
-
-Overfull \vbox (3.7493pt too high) detected at line 87
- []
-
+(./23 Boosting, Bagging, Random Forests.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 87.
+(Font)              size <5> substituted on input line 74.
 
 [1
 Non-PDF special ignored!
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./decis
-ion_tree.png>]
-<RTree_image.png, id=26, 1204.5pt x 808.01875pt>
-File: RTree_image.png Graphic file (type png)
- <use RTree_image.png>
-Package pdftex.def Info: RTree_image.png used on input line 130.
-(pdftex.def)             Requested size: 216.67201pt x 145.35078pt.
- [2
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+msa on input line 104.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 104.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [2
 
- <./RTree_image.png (PNG copy)>] [3
+]
+<heart_tree.pdf, id=32, 341.30852pt x 171.82123pt>
+File: heart_tree.pdf Graphic file (type pdf)
+ <use heart_tree.pdf>
+Package pdftex.def Info: heart_tree.pdf used on input line 144.
+(pdftex.def)             Requested size: 307.17482pt x 154.63765pt.
 
-] [4
+Overfull \vbox (152.89473pt too high) detected at line 144
+ []
 
-] [5
+[3
+
+ <./heart_tree.pdf>]
+<heart_tree_pruned.pdf, id=90, 341.30852pt x 171.82132pt>
+File: heart_tree_pruned.pdf Graphic file (type pdf)
+
+<use heart_tree_pruned.pdf>
+Package pdftex.def Info: heart_tree_pruned.pdf used on input line 144.
+(pdftex.def)             Requested size: 307.17482pt x 154.63773pt.
+
+Overfull \vbox (152.8948pt too high) detected at line 144
+ []
+
+[4
+
+ <./heart_tree_pruned.pdf>] [5
 
 ] [6
 
 ]
-<simple_tree.pdf, id=55, 157.75337pt x 161.84625pt>
-File: simple_tree.pdf Graphic file (type pdf)
- <use simple_tree.pdf>
-Package pdftex.def Info: simple_tree.pdf used on input line 177.
-(pdftex.def)             Requested size: 154.63574pt x 158.64713pt.
+<cow.jpg, id=147, 268.00125pt x 189.70876pt>
+File: cow.jpg Graphic file (type jpg)
+ <use cow.jpg>
+Package pdftex.def Info: cow.jpg used on input line 152.
+(pdftex.def)             Requested size: 258.6073pt x 183.05609pt.
+
+Overfull \vbox (12.8548pt too high) detected at line 152
+ []
 
 [7
 
- <./simple_tree.pdf>]
-<simple_partitioned_space.pdf, id=135, 212.15398pt x 178.5324pt>
-File: simple_partitioned_space.pdf Graphic file (type pdf)
+ <./cow.jpg>]
+File: cow.jpg Graphic file (type jpg)
+ <use cow.jpg>
+Package pdftex.def Info: cow.jpg used on input line 152.
+(pdftex.def)             Requested size: 258.6073pt x 183.05609pt.
 
-<use simple_partitioned_space.pdf>
-Package pdftex.def Info: simple_partitioned_space.pdf used on input line 197.
-(pdftex.def)             Requested size: 145.0203pt x 122.0374pt.
- [8
+Overfull \vbox (12.8548pt too high) detected at line 152
+ []
 
- <./simple_partitioned_space.pdf>]
-File: simple_tree.pdf Graphic file (type pdf)
+[8
 
-<use simple_tree.pdf>
-Package pdftex.def Info: simple_tree.pdf used on input line 222.
-(pdftex.def)             Requested size: 154.63574pt x 158.64713pt.
+] <netflix.png, id=160, 787.94376pt x 128.48pt>
+File: netflix.png Graphic file (type png)
+ <use netflix.png>
+Package pdftex.def Info: netflix.png used on input line 166.
+(pdftex.def)             Requested size: 433.34402pt x 70.66028pt.
  [9
 
-]
-File: simple_tree.pdf Graphic file (type pdf)
- <use simple_tree.pdf>
-Package pdftex.def Info: simple_tree.pdf used on input line 222.
-(pdftex.def)             Requested size: 154.63574pt x 158.64713pt.
+ <./netflix.png>]
+File: netflix.png Graphic file (type png)
+ <use netflix.png>
+Package pdftex.def Info: netflix.png used on input line 166.
+(pdftex.def)             Requested size: 433.34402pt x 70.66028pt.
  [10
 
-]
-File: simple_tree.pdf Graphic file (type pdf)
- <use simple_tree.pdf>
-Package pdftex.def Info: simple_tree.pdf used on input line 222.
-(pdftex.def)             Requested size: 154.63574pt x 158.64713pt.
+] [11
 
-[11
-
-]
-File: simple_tree.pdf Graphic file (type pdf)
- <use simple_tree.pdf>
-Package pdftex.def Info: simple_tree.pdf used on input line 222.
-(pdftex.def)             Requested size: 154.63574pt x 158.64713pt.
- [12
+] [12
 
 ] [13
 
@@ -1139,71 +1207,97 @@ Package pdftex.def Info: simple_tree.pdf used on input line 222.
 
 ] [15
 
-] [16
+]
+<Leo_Breiman.jpg, id=199, 60.225pt x 80.40038pt>
+File: Leo_Breiman.jpg Graphic file (type jpg)
+ <use Leo_Breiman.jpg>
+Package pdftex.def Info: Leo_Breiman.jpg used on input line 208.
+(pdftex.def)             Requested size: 130.00452pt x 173.57263pt.
 
-] [17
+Overfull \vbox (6.85893pt too high) detected at line 208
+ []
 
-] [18
+[16
+
+ <./Leo_Breiman.jpg>] <MEDR.png, id=206, 422.5386pt x 307.8702pt>
+File: MEDR.png Graphic file (type png)
+
+<use MEDR.png>
+Package pdftex.def Info: MEDR.png used on input line 218.
+(pdftex.def)             Requested size: 234.49236pt x 170.85161pt.
+
+Overfull \vbox (14.35031pt too high) detected at line 218
+ []
+
+[17
+
+ <./MEDR.png>] <bootstrap.png, id=213, 421.0932pt x 348.3414pt>
+File: bootstrap.png Graphic file (type png)
+
+<use bootstrap.png>
+Package pdftex.def Info: bootstrap.png used on input line 238.
+(pdftex.def)             Requested size: 216.67201pt x 179.24101pt.
+ [18
+
+ <./bootstrap.png>] [19
+
+] [20
+
+] [21
 
 ]
-<partition_examples.pdf, id=251, 333.57916pt x 148.69875pt>
-File: partition_examples.pdf Graphic file (type pdf)
+<islr88_only_bag.pdf, id=242, 598.79642pt x 547.5145pt>
+File: islr88_only_bag.pdf Graphic file (type pdf)
 
-<use partition_examples.pdf>
-Package pdftex.def Info: partition_examples.pdf used on input line 308.
-(pdftex.def)             Requested size: 346.67653pt x 154.54318pt.
- [19
+<use islr88_only_bag.pdf>
+Package pdftex.def Info: islr88_only_bag.pdf used on input line 290.
+(pdftex.def)             Requested size: 195.00348pt x 178.29933pt.
+ [22
 
- <./partition_examples.pdf>]
-File: partition_examples.pdf Graphic file (type pdf)
+ <./islr88_only_bag.pdf>]
+File: islr88_only_bag.pdf Graphic file (type pdf)
 
-<use partition_examples.pdf>
-Package pdftex.def Info: partition_examples.pdf used on input line 308.
-(pdftex.def)             Requested size: 346.67653pt x 154.54318pt.
- [20
-
-]
-<five_region_ex_map.pdf, id=310, 154.73398pt x 147.40771pt>
-File: five_region_ex_map.pdf Graphic file (type pdf)
-
-<use five_region_ex_map.pdf>
-Package pdftex.def Info: five_region_ex_map.pdf used on input line 315.
-(pdftex.def)             Requested size: 130.00452pt x 123.85986pt.
-
-<five_region_ex.pdf, id=311, 339.58589pt x 166.26436pt>
-File: five_region_ex.pdf Graphic file (type pdf)
-
-<use five_region_ex.pdf>
-Package pdftex.def Info: five_region_ex.pdf used on input line 315.
-(pdftex.def)             Requested size: 303.3395pt x 148.52533pt.
- [21
-
- <./five_region_ex_map.pdf> <./five_region_ex.pdf>] [22
-
-] [23
+<use islr88_only_bag.pdf>
+Package pdftex.def Info: islr88_only_bag.pdf used on input line 290.
+(pdftex.def)             Requested size: 195.00348pt x 178.29933pt.
+ [23
 
 ] [24
 
-] <complex_tree.pdf, id=425, 316.40851pt x 281.78928pt>
-File: complex_tree.pdf Graphic file (type pdf)
+] [25
 
-<use complex_tree.pdf>
-Package pdftex.def Info: complex_tree.pdf used on input line 349.
-(pdftex.def)             Requested size: 246.65761pt x 219.66582pt.
- [25
-
- <./complex_tree.pdf>] [26
+] [26
 
 ] [27
 
-] [28
+]
+<islr88_BagAndOOB.pdf, id=339, 583.64215pt x 547.90274pt>
+File: islr88_BagAndOOB.pdf Graphic file (type pdf)
 
-] [29
+<use islr88_BagAndOOB.pdf>
+Package pdftex.def Info: islr88_BagAndOOB.pdf used on input line 328.
+(pdftex.def)             Requested size: 220.99371pt x 207.46506pt.
 
-] [30
+Overfull \vbox (25.26376pt too high) detected at line 328
+ []
+
+[28
+
+ <./islr88_BagAndOOB.pdf>] [29
 
 ]
-[31
+<VIM.pdf, id=402, 231.38358pt x 213.09924pt>
+File: VIM.pdf Graphic file (type pdf)
+ <use VIM.pdf>
+Package pdftex.def Info: VIM.pdf used on input line 350.
+(pdftex.def)             Requested size: 212.01753pt x 195.26057pt.
+
+Overfull \vbox (13.05928pt too high) detected at line 350
+ []
+
+[30
+
+ <./VIM.pdf>] [31
 
 ] [32
 
@@ -1211,19 +1305,19 @@ Package pdftex.def Info: complex_tree.pdf used on input line 349.
 
 ] [34
 
-] <MSE_vs_treesize.pdf, id=538, 237.42062pt x 163.88637pt>
-File: MSE_vs_treesize.pdf Graphic file (type pdf)
+]
+<islr88.pdf, id=475, 256.88237pt x 226.19205pt>
+File: islr88.pdf Graphic file (type pdf)
+ <use islr88.pdf>
+Package pdftex.def Info: islr88.pdf used on input line 382.
+(pdftex.def)             Requested size: 235.61732pt x 207.46506pt.
 
-<use MSE_vs_treesize.pdf>
-Package pdftex.def Info: MSE_vs_treesize.pdf used on input line 450.
-(pdftex.def)             Requested size: 346.67653pt x 239.3171pt.
-
-Overfull \vbox (81.1158pt too high) detected at line 450
+Overfull \vbox (25.26376pt too high) detected at line 382
  []
 
 [35
 
- <./MSE_vs_treesize.pdf>] [36
+ <./islr88.pdf>] [36
 
 ] [37
 
@@ -1235,148 +1329,52 @@ Overfull \vbox (81.1158pt too high) detected at line 450
 
 ] [41
 
-] [42
-
 ]
-<stingone_etal.png, id=622, 836.12375pt x 387.4475pt>
-File: stingone_etal.png Graphic file (type png)
- <use stingone_etal.png>
-Package pdftex.def Info: stingone_etal.png used on input line 479.
-(pdftex.def)             Requested size: 433.34402pt x 200.8117pt.
+<singh_etal.pdf, id=559, 530.01216pt x 388.96014pt>
+File: singh_etal.pdf Graphic file (type pdf)
+ <use singh_etal.pdf>
+Package pdftex.def Info: singh_etal.pdf used on input line 440.
+(pdftex.def)             Requested size: 332.5831pt x 244.0748pt.
 
-[43
-
- <./stingone_etal.png>] [44
-
-] [45
-
-] [46
-
-]
-<stingone_tree_totalpop.pdf, id=647, 419.94507pt x 187.75014pt>
-File: stingone_tree_totalpop.pdf Graphic file (type pdf)
-
-<use stingone_tree_totalpop.pdf>
-Package pdftex.def Info: stingone_tree_totalpop.pdf used on input line 520.
-(pdftex.def)             Requested size: 433.34402pt x 193.74289pt.
-
-Overfull \vbox (43.67079pt too high) detected at line 520
+Overfull \vbox (39.0pt too high) detected at line 440
  []
 
-[47
+[42
 
- <./stingone_tree_totalpop.pdf>] [48
+ <./singh_etal.pdf>] <lucknow.png, id=629, 960.58875pt x 730.73pt>
+File: lucknow.png Graphic file (type png)
 
-]
-<NYT_tree.jpg, id=694, 462.528pt x 734.2632pt>
-File: NYT_tree.jpg Graphic file (type jpg)
- <use NYT_tree.jpg>
-Package pdftex.def Info: NYT_tree.jpg used on input line 547.
-(pdftex.def)             Requested size: 153.7498pt x 244.0748pt.
+<use lucknow.png>
+Package pdftex.def Info: lucknow.png used on input line 444.
+(pdftex.def)             Requested size: 288.76514pt x 219.66582pt.
+ [43
 
-Overfull \vbox (1.0pt too high) detected at line 547
- []
+ <./lucknow.png>]
+<singh_table1.png, id=638, 1219.55624pt x 331.2375pt>
+File: singh_table1.png Graphic file (type png)
+ <use singh_table1.png>
+Package pdftex.def Info: singh_table1.png used on input line 451.
+(pdftex.def)             Requested size: 433.34402pt x 117.69879pt.
 
-[49
+[44
 
- <./NYT_tree.jpg>] [50
+ <./singh_table1.png>] <singh_4b.png, id=647, 460.72125pt x 320.19624pt>
+File: singh_4b.png Graphic file (type png)
 
-] [51
+<use singh_4b.png>
+Package pdftex.def Info: singh_4b.png used on input line 468.
+(pdftex.def)             Requested size: 263.39417pt x 183.05609pt.
+ [45
 
-] [52
-
-] [53
-
-] [54
-
-]
-<E_vs_G_vs_D.pdf, id=726, 247.77809pt x 147.1908pt>
-File: E_vs_G_vs_D.pdf Graphic file (type pdf)
- <use E_vs_G_vs_D.pdf>
-Package pdftex.def Info: E_vs_G_vs_D.pdf used on input line 626.
-(pdftex.def)             Requested size: 195.00348pt x 115.84373pt.
-
-[55
-
- <./E_vs_G_vs_D.pdf>]
-File: E_vs_G_vs_D.pdf Graphic file (type pdf)
- <use E_vs_G_vs_D.pdf>
-Package pdftex.def Info: E_vs_G_vs_D.pdf used on input line 648.
-(pdftex.def)             Requested size: 195.00348pt x 115.84373pt.
- [56
-
-] [57
-
-]
-<tree_vs_linear_for_classification.pdf, id=799, 250.98045pt x 242.55098pt>
-File: tree_vs_linear_for_classification.pdf Graphic file (type pdf)
-
-<use tree_vs_linear_for_classification.pdf>
-Package pdftex.def Info: tree_vs_linear_for_classification.pdf used on input li
-ne 667.
-(pdftex.def)             Requested size: 227.3011pt x 219.66582pt.
-
-Overfull \vbox (37.46452pt too high) detected at line 667
- []
-
-[58
-
- <./tree_vs_linear_for_classification.pdf>] [59
-
-] [60
-
-]
-LaTeX Font Info:    Try loading font information for TS1+cmss on input line 705
-.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmss.fd
-File: ts1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [61
-
-]
-<spam_error.pdf, id=865, 309.16293pt x 227.71254pt>
-File: spam_error.pdf Graphic file (type pdf)
- <use spam_error.pdf>
-Package pdftex.def Info: spam_error.pdf used on input line 712.
-(pdftex.def)             Requested size: 346.67653pt x 255.34554pt.
-
-Overfull \vbox (62.27074pt too high) detected at line 712
- []
-
-[62
-
- <./spam_error.pdf>] <spam_tree.pdf, id=905, 364.07738pt x 384.29262pt>
-File: spam_tree.pdf Graphic file (type pdf)
-
-<use spam_tree.pdf>
-Package pdftex.def Info: spam_tree.pdf used on input line 735.
-(pdftex.def)             Requested size: 215.04823pt x 226.98776pt.
-
-Overfull \vbox (21.91296pt too high) detected at line 735
- []
-
-[63
-
- <./spam_tree.pdf>]
-File: spam_tree.pdf Graphic file (type pdf)
- <use spam_tree.pdf>
-Package pdftex.def Info: spam_tree.pdf used on input line 744.
-(pdftex.def)             Requested size: 346.8604pt x 366.1122pt.
-
-Overfull \vbox (155.45816pt too high) detected at line 744
- []
-
-[64
-
-]
+ <./singh_4b.png>]
 \tf@nav=\write7
-\openout7 = `"22 CART.nav"'.
+\openout7 = `"23 Boosting, Bagging, Random Forests.nav"'.
 
 \tf@toc=\write8
-\openout8 = `"22 CART.toc"'.
+\openout8 = `"23 Boosting, Bagging, Random Forests.toc"'.
 
 \tf@snm=\write9
-\openout9 = `"22 CART.snm"'.
+\openout9 = `"23 Boosting, Bagging, Random Forests.snm"'.
 
 
 
@@ -1385,12 +1383,13 @@ Package movie15 Warning: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 (movie15)                @@ superseded by `media9'.           @@
 (movie15)                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 745.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 745.
-(./22 CART.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 745.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 745.
-Package rerunfilecheck Info: File `"22 CART".out' has not changed.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 469.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 469.
+(./23 Boosting, Bagging, Random Forests.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 469.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 469.
+Package rerunfilecheck Info: File `"23 Boosting, Bagging, Random Forests".out' 
+has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
@@ -1403,51 +1402,47 @@ LaTeX Font Warning: Size substitutions with differences
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 20675 strings out of 492995
- 385974 string characters out of 6132704
- 596650 words of memory out of 5000000
- 23615 multiletter control sequences out of 15000+600000
- 22351 words of font info for 81 fonts, out of 8000000 for 9000
+ 23425 strings out of 492995
+ 451728 string characters out of 6132704
+ 661819 words of memory out of 5000000
+ 26356 multiletter control sequences out of 15000+600000
+ 20253 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,15n,63p,775b,4220s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm
--super-ts1.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.
-pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texmf-dist/
-fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2017/texmf-di
-st/fonts/type1/public/cm-super/sfss1095.pfb>
-Output written on "22 CART.pdf" (64 pages, 2753952 bytes).
+ 48i,12n,57p,804b,3797s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
+ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
+2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on "23 Boosting, Bagging, Random Forests.pdf" (45 pages, 4138668
+ bytes).
 PDF statistics:
- 1051 PDF objects out of 1200 (max. 8388607)
- 851 compressed objects within 9 object streams
- 129 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 747 PDF objects out of 1000 (max. 8388607)
+ 587 compressed objects within 6 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
