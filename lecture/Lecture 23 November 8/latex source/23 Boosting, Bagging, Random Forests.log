@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 NOV 2018 09:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 NOV 2018 09:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1122,11 +1122,11 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 Non-PDF special ignored!
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 104.
+LaTeX Font Info:    Try loading font information for U+msa on input line 105.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 104.
+LaTeX Font Info:    Try loading font information for U+msb on input line 105.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2
@@ -1135,10 +1135,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <heart_tree.pdf, id=32, 341.30852pt x 171.82123pt>
 File: heart_tree.pdf Graphic file (type pdf)
  <use heart_tree.pdf>
-Package pdftex.def Info: heart_tree.pdf used on input line 144.
+Package pdftex.def Info: heart_tree.pdf used on input line 145.
 (pdftex.def)             Requested size: 307.17482pt x 154.63765pt.
 
-Overfull \vbox (152.89473pt too high) detected at line 144
+Overfull \vbox (152.89473pt too high) detected at line 145
  []
 
 [3
@@ -1148,10 +1148,10 @@ Overfull \vbox (152.89473pt too high) detected at line 144
 File: heart_tree_pruned.pdf Graphic file (type pdf)
 
 <use heart_tree_pruned.pdf>
-Package pdftex.def Info: heart_tree_pruned.pdf used on input line 144.
+Package pdftex.def Info: heart_tree_pruned.pdf used on input line 145.
 (pdftex.def)             Requested size: 307.17482pt x 154.63773pt.
 
-Overfull \vbox (152.8948pt too high) detected at line 144
+Overfull \vbox (152.8948pt too high) detected at line 145
  []
 
 [4
@@ -1164,10 +1164,10 @@ Overfull \vbox (152.8948pt too high) detected at line 144
 <cow.jpg, id=147, 268.00125pt x 189.70876pt>
 File: cow.jpg Graphic file (type jpg)
  <use cow.jpg>
-Package pdftex.def Info: cow.jpg used on input line 152.
+Package pdftex.def Info: cow.jpg used on input line 153.
 (pdftex.def)             Requested size: 258.6073pt x 183.05609pt.
 
-Overfull \vbox (12.8548pt too high) detected at line 152
+Overfull \vbox (12.8548pt too high) detected at line 153
  []
 
 [7
@@ -1175,10 +1175,10 @@ Overfull \vbox (12.8548pt too high) detected at line 152
  <./cow.jpg>]
 File: cow.jpg Graphic file (type jpg)
  <use cow.jpg>
-Package pdftex.def Info: cow.jpg used on input line 152.
+Package pdftex.def Info: cow.jpg used on input line 153.
 (pdftex.def)             Requested size: 258.6073pt x 183.05609pt.
 
-Overfull \vbox (12.8548pt too high) detected at line 152
+Overfull \vbox (12.8548pt too high) detected at line 153
  []
 
 [8
@@ -1186,14 +1186,14 @@ Overfull \vbox (12.8548pt too high) detected at line 152
 ] <netflix.png, id=160, 787.94376pt x 128.48pt>
 File: netflix.png Graphic file (type png)
  <use netflix.png>
-Package pdftex.def Info: netflix.png used on input line 166.
+Package pdftex.def Info: netflix.png used on input line 167.
 (pdftex.def)             Requested size: 433.34402pt x 70.66028pt.
  [9
 
  <./netflix.png>]
 File: netflix.png Graphic file (type png)
  <use netflix.png>
-Package pdftex.def Info: netflix.png used on input line 166.
+Package pdftex.def Info: netflix.png used on input line 167.
 (pdftex.def)             Requested size: 433.34402pt x 70.66028pt.
  [10
 
@@ -1211,10 +1211,10 @@ Package pdftex.def Info: netflix.png used on input line 166.
 <Leo_Breiman.jpg, id=199, 60.225pt x 80.40038pt>
 File: Leo_Breiman.jpg Graphic file (type jpg)
  <use Leo_Breiman.jpg>
-Package pdftex.def Info: Leo_Breiman.jpg used on input line 208.
+Package pdftex.def Info: Leo_Breiman.jpg used on input line 209.
 (pdftex.def)             Requested size: 130.00452pt x 173.57263pt.
 
-Overfull \vbox (6.85893pt too high) detected at line 208
+Overfull \vbox (6.85893pt too high) detected at line 209
  []
 
 [16
@@ -1223,10 +1223,10 @@ Overfull \vbox (6.85893pt too high) detected at line 208
 File: MEDR.png Graphic file (type png)
 
 <use MEDR.png>
-Package pdftex.def Info: MEDR.png used on input line 218.
+Package pdftex.def Info: MEDR.png used on input line 219.
 (pdftex.def)             Requested size: 234.49236pt x 170.85161pt.
 
-Overfull \vbox (14.35031pt too high) detected at line 218
+Overfull \vbox (14.35031pt too high) detected at line 219
  []
 
 [17
@@ -1235,7 +1235,7 @@ Overfull \vbox (14.35031pt too high) detected at line 218
 File: bootstrap.png Graphic file (type png)
 
 <use bootstrap.png>
-Package pdftex.def Info: bootstrap.png used on input line 238.
+Package pdftex.def Info: bootstrap.png used on input line 239.
 (pdftex.def)             Requested size: 216.67201pt x 179.24101pt.
  [18
 
@@ -1250,7 +1250,7 @@ Package pdftex.def Info: bootstrap.png used on input line 238.
 File: islr88_only_bag.pdf Graphic file (type pdf)
 
 <use islr88_only_bag.pdf>
-Package pdftex.def Info: islr88_only_bag.pdf used on input line 290.
+Package pdftex.def Info: islr88_only_bag.pdf used on input line 291.
 (pdftex.def)             Requested size: 195.00348pt x 178.29933pt.
  [22
 
@@ -1258,7 +1258,7 @@ Package pdftex.def Info: islr88_only_bag.pdf used on input line 290.
 File: islr88_only_bag.pdf Graphic file (type pdf)
 
 <use islr88_only_bag.pdf>
-Package pdftex.def Info: islr88_only_bag.pdf used on input line 290.
+Package pdftex.def Info: islr88_only_bag.pdf used on input line 291.
 (pdftex.def)             Requested size: 195.00348pt x 178.29933pt.
  [23
 
@@ -1275,10 +1275,10 @@ Package pdftex.def Info: islr88_only_bag.pdf used on input line 290.
 File: islr88_BagAndOOB.pdf Graphic file (type pdf)
 
 <use islr88_BagAndOOB.pdf>
-Package pdftex.def Info: islr88_BagAndOOB.pdf used on input line 328.
+Package pdftex.def Info: islr88_BagAndOOB.pdf used on input line 329.
 (pdftex.def)             Requested size: 220.99371pt x 207.46506pt.
 
-Overfull \vbox (25.26376pt too high) detected at line 328
+Overfull \vbox (25.26376pt too high) detected at line 329
  []
 
 [28
@@ -1289,10 +1289,10 @@ Overfull \vbox (25.26376pt too high) detected at line 328
 <VIM.pdf, id=402, 231.38358pt x 213.09924pt>
 File: VIM.pdf Graphic file (type pdf)
  <use VIM.pdf>
-Package pdftex.def Info: VIM.pdf used on input line 350.
+Package pdftex.def Info: VIM.pdf used on input line 351.
 (pdftex.def)             Requested size: 212.01753pt x 195.26057pt.
 
-Overfull \vbox (13.05928pt too high) detected at line 350
+Overfull \vbox (13.05928pt too high) detected at line 351
  []
 
 [30
@@ -1309,10 +1309,10 @@ Overfull \vbox (13.05928pt too high) detected at line 350
 <islr88.pdf, id=475, 256.88237pt x 226.19205pt>
 File: islr88.pdf Graphic file (type pdf)
  <use islr88.pdf>
-Package pdftex.def Info: islr88.pdf used on input line 382.
+Package pdftex.def Info: islr88.pdf used on input line 383.
 (pdftex.def)             Requested size: 235.61732pt x 207.46506pt.
 
-Overfull \vbox (25.26376pt too high) detected at line 382
+Overfull \vbox (25.26376pt too high) detected at line 383
  []
 
 [35
@@ -1333,10 +1333,10 @@ Overfull \vbox (25.26376pt too high) detected at line 382
 <singh_etal.pdf, id=559, 530.01216pt x 388.96014pt>
 File: singh_etal.pdf Graphic file (type pdf)
  <use singh_etal.pdf>
-Package pdftex.def Info: singh_etal.pdf used on input line 440.
+Package pdftex.def Info: singh_etal.pdf used on input line 441.
 (pdftex.def)             Requested size: 332.5831pt x 244.0748pt.
 
-Overfull \vbox (39.0pt too high) detected at line 440
+Overfull \vbox (39.0pt too high) detected at line 441
  []
 
 [42
@@ -1345,7 +1345,7 @@ Overfull \vbox (39.0pt too high) detected at line 440
 File: lucknow.png Graphic file (type png)
 
 <use lucknow.png>
-Package pdftex.def Info: lucknow.png used on input line 444.
+Package pdftex.def Info: lucknow.png used on input line 445.
 (pdftex.def)             Requested size: 288.76514pt x 219.66582pt.
  [43
 
@@ -1353,7 +1353,7 @@ Package pdftex.def Info: lucknow.png used on input line 444.
 <singh_table1.png, id=638, 1219.55624pt x 331.2375pt>
 File: singh_table1.png Graphic file (type png)
  <use singh_table1.png>
-Package pdftex.def Info: singh_table1.png used on input line 451.
+Package pdftex.def Info: singh_table1.png used on input line 452.
 (pdftex.def)             Requested size: 433.34402pt x 117.69879pt.
 
 [44
@@ -1362,7 +1362,7 @@ Package pdftex.def Info: singh_table1.png used on input line 451.
 File: singh_4b.png Graphic file (type png)
 
 <use singh_4b.png>
-Package pdftex.def Info: singh_4b.png used on input line 468.
+Package pdftex.def Info: singh_4b.png used on input line 469.
 (pdftex.def)             Requested size: 263.39417pt x 183.05609pt.
  [45
 
@@ -1383,11 +1383,11 @@ Package movie15 Warning: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 (movie15)                @@ superseded by `media9'.           @@
 (movie15)                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 469.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 469.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
 (./23 Boosting, Bagging, Random Forests.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 469.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 469.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
 Package rerunfilecheck Info: File `"23 Boosting, Bagging, Random Forests".out' 
 has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1402,13 +1402,13 @@ LaTeX Font Warning: Size substitutions with differences
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 23425 strings out of 492995
- 451728 string characters out of 6132704
+ 23427 strings out of 492995
+ 451744 string characters out of 6132704
  661819 words of memory out of 5000000
- 26356 multiletter control sequences out of 15000+600000
+ 26358 multiletter control sequences out of 15000+600000
  20253 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,12n,57p,804b,3797s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,12n,57p,804b,3799s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
@@ -1438,7 +1438,7 @@ e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2017/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on "23 Boosting, Bagging, Random Forests.pdf" (45 pages, 4138668
+Output written on "23 Boosting, Bagging, Random Forests.pdf" (45 pages, 4138881
  bytes).
 PDF statistics:
  747 PDF objects out of 1000 (max. 8388607)
