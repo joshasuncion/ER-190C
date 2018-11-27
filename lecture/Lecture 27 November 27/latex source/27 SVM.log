@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  27 NOV 2018 06:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  27 NOV 2018 09:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,7 +1050,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] [10
 
 ]
-Overfull \vbox (2.7433pt too high) detected at line 253
+Overfull \vbox (1.82748pt too high) detected at line 256
  []
 
 [11
@@ -1063,7 +1063,7 @@ Overfull \vbox (2.7433pt too high) detected at line 253
 File: SVM_kernels.pdf Graphic file (type pdf)
 
 <use SVM_kernels.pdf>
-Package pdftex.def Info: SVM_kernels.pdf used on input line 299.
+Package pdftex.def Info: SVM_kernels.pdf used on input line 302.
 (pdftex.def)             Requested size: 264.98286pt x 134.98238pt.
  [14
 
@@ -1071,7 +1071,7 @@ Package pdftex.def Info: SVM_kernels.pdf used on input line 299.
 <shao_JPRS.png, id=204, 1099.10625pt x 425.59pt>
 File: shao_JPRS.png Graphic file (type png)
  <use shao_JPRS.png>
-Package pdftex.def Info: shao_JPRS.png used on input line 307.
+Package pdftex.def Info: shao_JPRS.png used on input line 310.
 (pdftex.def)             Requested size: 433.34402pt x 167.79773pt.
  [15
 
@@ -1081,10 +1081,10 @@ Package pdftex.def Info: shao_JPRS.png used on input line 307.
 File: shao_figure.png Graphic file (type png)
 
 <use shao_figure.png>
-Package pdftex.def Info: shao_figure.png used on input line 338.
+Package pdftex.def Info: shao_figure.png used on input line 341.
 (pdftex.def)             Requested size: 304.32555pt x 219.66582pt.
 
-Overfull \vbox (37.46452pt too high) detected at line 338
+Overfull \vbox (37.46452pt too high) detected at line 341
  []
 
 [17
@@ -1094,10 +1094,10 @@ Overfull \vbox (37.46452pt too high) detected at line 338
 File: shao_performance.png Graphic file (type png)
 
 <use shao_performance.png>
-Package pdftex.def Info: shao_performance.png used on input line 345.
+Package pdftex.def Info: shao_performance.png used on input line 348.
 (pdftex.def)             Requested size: 180.38536pt x 244.0748pt.
 
-Overfull \vbox (39.0pt too high) detected at line 345
+Overfull \vbox (39.0pt too high) detected at line 348
  []
 
 [18
@@ -1108,10 +1108,10 @@ Overfull \vbox (39.0pt too high) detected at line 345
 <fig9_10.png, id=237, 848.16875pt x 527.9725pt>
 File: fig9_10.png Graphic file (type png)
  <use fig9_10.png>
-Package pdftex.def Info: fig9_10.png used on input line 368.
+Package pdftex.def Info: fig9_10.png used on input line 371.
 (pdftex.def)             Requested size: 303.3395pt x 188.82124pt.
 
-Overfull \vbox (6.61995pt too high) detected at line 368
+Overfull \vbox (6.61995pt too high) detected at line 371
  []
 
 [20
@@ -1120,10 +1120,10 @@ Overfull \vbox (6.61995pt too high) detected at line 368
 File: fig9_11.png Graphic file (type png)
 
 <use fig9_11.png>
-Package pdftex.def Info: fig9_11.png used on input line 375.
+Package pdftex.def Info: fig9_11.png used on input line 378.
 (pdftex.def)             Requested size: 303.3395pt x 189.18022pt.
 
-Overfull \vbox (6.97893pt too high) detected at line 375
+Overfull \vbox (6.97893pt too high) detected at line 378
  []
 
 [21
@@ -1136,16 +1136,16 @@ Overfull \vbox (6.97893pt too high) detected at line 375
 File: ESL_12_2a.png Graphic file (type png)
 
 <use ESL_12_2a.png>
-Package pdftex.def Info: ESL_12_2a.png used on input line 397.
+Package pdftex.def Info: ESL_12_2a.png used on input line 400.
 (pdftex.def)             Requested size: 179.83485pt x 176.07854pt.
  <ESL_12_2b.png, id=262, 328.22626pt x 329.23pt>
 File: ESL_12_2b.png Graphic file (type png)
 
 <use ESL_12_2b.png>
-Package pdftex.def Info: ESL_12_2b.png used on input line 397.
+Package pdftex.def Info: ESL_12_2b.png used on input line 400.
 (pdftex.def)             Requested size: 173.33496pt x 173.86813pt.
 
-Overfull \vbox (5.87724pt too high) detected at line 397
+Overfull \vbox (5.87724pt too high) detected at line 400
  []
 
 [24
@@ -1154,13 +1154,13 @@ Overfull \vbox (5.87724pt too high) detected at line 397
 <ESL_12_3a.png, id=270, 338.26375pt x 336.25626pt>
 File: ESL_12_3a.png Graphic file (type png)
  <use ESL_12_3a.png>
-Package pdftex.def Info: ESL_12_3a.png used on input line 406.
+Package pdftex.def Info: ESL_12_3a.png used on input line 409.
 (pdftex.def)             Requested size: 176.58821pt x 175.5418pt.
 
 <ESL_12_3b.png, id=271, 328.22626pt x 336.25626pt>
 File: ESL_12_3b.png Graphic file (type png)
  <use ESL_12_3b.png>
-Package pdftex.def Info: ESL_12_3b.png used on input line 406.
+Package pdftex.def Info: ESL_12_3b.png used on input line 409.
 (pdftex.def)             Requested size: 173.33496pt x 177.57874pt.
  [25
 
@@ -1175,7 +1175,7 @@ Package pdftex.def Info: ESL_12_3b.png used on input line 406.
 File: bias-variance-ridge.pdf Graphic file (type pdf)
 
 <use bias-variance-ridge.pdf>
-Package pdftex.def Info: bias-variance-ridge.pdf used on input line 456.
+Package pdftex.def Info: bias-variance-ridge.pdf used on input line 455.
 (pdftex.def)             Requested size: 195.00348pt x 151.63199pt.
  [29
 
@@ -1202,11 +1202,11 @@ Package pdftex.def Info: bias-variance-ridge.pdf used on input line 456.
 \tf@snm=\write9
 \openout9 = `"27 SVM.snm"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 490.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 490.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 489.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 489.
  (./27 SVM.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 490.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 490.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 489.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 489.
 Package rerunfilecheck Info: File `"27 SVM".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1222,7 +1222,7 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  20080 strings out of 492995
  375107 string characters out of 6132704
- 560523 words of memory out of 5000000
+ 560524 words of memory out of 5000000
  23095 multiletter control sequences out of 15000+600000
  18634 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1256,7 +1256,7 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2017/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "27 SVM.pdf" (35 pages, 6765801 bytes).
+Output written on "27 SVM.pdf" (35 pages, 6765663 bytes).
 PDF statistics:
  512 PDF objects out of 1000 (max. 8388607)
  391 compressed objects within 4 object streams

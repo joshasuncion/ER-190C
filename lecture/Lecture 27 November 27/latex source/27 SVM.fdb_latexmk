@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1543330427 "27 SVM.tex" "27 SVM.pdf" "27 SVM" 1543330432
+["pdflatex"] 1543339791 "27 SVM.tex" "27 SVM.pdf" "27 SVM" 1543339794
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1480098698 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1480098698 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -231,10 +231,10 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1495593487 4129592 0e6cfee100d68e6d96b92c0258f2ff73 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "27 SVM.aux" 1543330431 4671 fbc14dda8771f382173fc166ff60b9b3 ""
-  "27 SVM.nav" 1543330431 2875 e67cd60535308afb0ddaecd7325d892a ""
-  "27 SVM.out" 1543330428 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "27 SVM.tex" 1543330427 15568 ae63f509d186223577f19f4898afdfe1 ""
+  "27 SVM.aux" 1543339794 4671 fbc14dda8771f382173fc166ff60b9b3 ""
+  "27 SVM.nav" 1543339794 2875 e67cd60535308afb0ddaecd7325d892a ""
+  "27 SVM.out" 1543339791 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "27 SVM.tex" 1543339791 15477 d0999ee1a553775b45f07802f1b2f369 ""
   "ESL_12_2a.png" 1510075096 125099 a3701dde6ef667765122e176d155ba8c ""
   "ESL_12_2b.png" 1510075104 126232 3b051356494b75f842f695a1cf630803 ""
   "ESL_12_3a.png" 1510075179 160248 b0f4d183c2f125f946e53b5b353bf212 ""
@@ -247,10 +247,10 @@
   "shao_figure.png" 1510070172 4916208 84bf54b6583c7b8abda59969a39313f9 ""
   "shao_performance.png" 1510073911 256668 7545379820d67a33200c365d216ec780 ""
   (generated)
-  "27 SVM.log"
-  "27 SVM.toc"
   "27 SVM.aux"
-  "27 SVM.snm"
-  "27 SVM.pdf"
   "27 SVM.nav"
+  "27 SVM.snm"
+  "27 SVM.toc"
+  "27 SVM.log"
+  "27 SVM.pdf"
   "27 SVM.out"

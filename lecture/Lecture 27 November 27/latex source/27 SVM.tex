@@ -113,7 +113,7 @@ GSI: Seigi Karasaki}
 	    	\item Train, test and validation data sets
 	    	\item Fit the model
 	    	\item Choose ``hyperparameters''
-	    	\item valuate error distributions
+	    	\item score the model
     	\end{itemize}
     	\item Course reviews
 	\end{enumerate}
@@ -231,17 +231,20 @@ GSI: Seigi Karasaki}
 	\begin{columns}
 		\column{0.7\textwidth}
 
+		Define a generic model:
+		\begin{align*}
+			f(x_i) = \beta_0+\sum_{k=1}^p \alpha_k K(x_i,x_k)
+		\end{align*}
+
+		With kernels:
 		\begin{align*}
 			K_\text{linear}(x_i,x_k)     & = \braket{x_i,x_k} = \sum_{j=1}^px_{ij}x_{kj} \\
 			K_\text{polynomial}(x_i,x_k) & = (1+ \sum_{j=1}^px_{ij}x_{kj})^d             \\
 			K_\text{radial}(x_i,x_k)     & = \exp(-\gamma \sum_{j=1}^p(x_{ij}-x_{kj})^2) \\
 		\end{align*}
 
-		Then we can apply these kernels:
-		\begin{align*}
-			f(x_i) = \beta_0+\sum_{k=1}^p \alpha_k K(x_i,x_k)
-		\end{align*}
 		\column{0.3\textwidth}
+		
 
 		The radial kernel serves to give training observations far from a test point less weight (due to negative exponential).
 
@@ -277,8 +280,8 @@ GSI: Seigi Karasaki}
 
 	Assume $\alpha$ is positive.  Then points closer to $x_i$ will yield
 	\begin{itemize}
-		\item larger $f$?
-		\item smaller $f$?
+		\item Larger $f$?
+		\item Smaller $f$?
 	\end{itemize}
 Larger evaluations of the kernel push $f$ in the positive direction $\rightarrow$ tend to classify with the positive variable.
 \end{frame}
@@ -423,15 +426,11 @@ Larger evaluations of the kernel push $f$ in the positive direction $\rightarrow
 \end{frame}
 
 \begin{frame}{Ways to minimize the loss function}
-	\begin{columns}
-		\column{0.5\textwidth}
-			\begin{itemize}
-				\item Closed form solution -- e.g. normal equations
-				\item Gradient search
-			\end{itemize}
+	\begin{itemize}
+		\item Closed form solution -- e.g. normal equations
+		\item Gradient search
+	\end{itemize}
 
-		\column{0.5\textwidth}
-	\end{columns}
 
 	In both cases, we're relying on the condition that the gradient of the loss function approaches zero as we approach the optimal solution 
 \end{frame}
