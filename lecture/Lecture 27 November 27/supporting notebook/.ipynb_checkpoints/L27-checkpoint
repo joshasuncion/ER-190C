@@ -1,0 +1,811 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "\n",
+    "from matplotlib import pyplot as plt\n",
+    "\n",
+    "from sklearn.svm import SVC\n",
+    "from sklearn.model_selection import train_test_split"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "FileNotFoundError",
+     "evalue": "File b'data/ces3results_environment' does not exist",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-8-feda8253eeaa>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0menv\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread_csv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'data/ces3results_environment'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0mdemog\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread_csv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'data/ces3results_demographics'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m/anaconda3/lib/python3.6/site-packages/pandas/io/parsers.py\u001b[0m in \u001b[0;36mparser_f\u001b[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, escapechar, comment, encoding, dialect, tupleize_cols, error_bad_lines, warn_bad_lines, skipfooter, doublequote, delim_whitespace, low_memory, memory_map, float_precision)\u001b[0m\n\u001b[1;32m    676\u001b[0m                     skip_blank_lines=skip_blank_lines)\n\u001b[1;32m    677\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 678\u001b[0;31m         \u001b[0;32mreturn\u001b[0m \u001b[0m_read\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    679\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    680\u001b[0m     \u001b[0mparser_f\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m__name__\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mname\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m/anaconda3/lib/python3.6/site-packages/pandas/io/parsers.py\u001b[0m in \u001b[0;36m_read\u001b[0;34m(filepath_or_buffer, kwds)\u001b[0m\n\u001b[1;32m    438\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    439\u001b[0m     \u001b[0;31m# Create the parser.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 440\u001b[0;31m     \u001b[0mparser\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mTextFileReader\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    441\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    442\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0mchunksize\u001b[0m \u001b[0;32mor\u001b[0m \u001b[0miterator\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m/anaconda3/lib/python3.6/site-packages/pandas/io/parsers.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, f, engine, **kwds)\u001b[0m\n\u001b[1;32m    785\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0moptions\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'has_index_names'\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mkwds\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'has_index_names'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    786\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 787\u001b[0;31m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_make_engine\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mengine\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    788\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    789\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0mclose\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m/anaconda3/lib/python3.6/site-packages/pandas/io/parsers.py\u001b[0m in \u001b[0;36m_make_engine\u001b[0;34m(self, engine)\u001b[0m\n\u001b[1;32m   1012\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0m_make_engine\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mengine\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m'c'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1013\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mengine\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0;34m'c'\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1014\u001b[0;31m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mCParserWrapper\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0moptions\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1015\u001b[0m         \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1016\u001b[0m             \u001b[0;32mif\u001b[0m \u001b[0mengine\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0;34m'python'\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m/anaconda3/lib/python3.6/site-packages/pandas/io/parsers.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, src, **kwds)\u001b[0m\n\u001b[1;32m   1706\u001b[0m         \u001b[0mkwds\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'usecols'\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0musecols\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1707\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1708\u001b[0;31m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_reader\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mparsers\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mTextReader\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msrc\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1709\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1710\u001b[0m         \u001b[0mpassed_names\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mnames\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32mpandas/_libs/parsers.pyx\u001b[0m in \u001b[0;36mpandas._libs.parsers.TextReader.__cinit__\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;32mpandas/_libs/parsers.pyx\u001b[0m in \u001b[0;36mpandas._libs.parsers.TextReader._setup_parser_source\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;31mFileNotFoundError\u001b[0m: File b'data/ces3results_environment' does not exist"
+     ]
+    }
+   ],
+   "source": [
+    "env = pd.read_csv('ces3results_environment.csv')\n",
+    "demog = pd.read_csv('ces3results_demographics.csv')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Second, let's have a look at what each of these data entails: "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Census Tract</th>\n",
+       "      <th>Total Population</th>\n",
+       "      <th>California County</th>\n",
+       "      <th>ZIP</th>\n",
+       "      <th>Nearby City \n",
+       "(to help approximate location only)</th>\n",
+       "      <th>Longitude</th>\n",
+       "      <th>Latitude</th>\n",
+       "      <th>CES 3.0 Score</th>\n",
+       "      <th>CES 3.0 Percentile</th>\n",
+       "      <th>CES 3.0 \n",
+       "Percentile Range</th>\n",
+       "      <th>...</th>\n",
+       "      <th>Linguistic Isolation Pctl</th>\n",
+       "      <th>Poverty</th>\n",
+       "      <th>Poverty Pctl</th>\n",
+       "      <th>Unemployment</th>\n",
+       "      <th>Unemployment Pctl</th>\n",
+       "      <th>Housing Burden</th>\n",
+       "      <th>Housing Burden Pctl</th>\n",
+       "      <th>Pop. Char.</th>\n",
+       "      <th>Pop. Char. Score</th>\n",
+       "      <th>Pop. Char. Pctl</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>6019001100</td>\n",
+       "      <td>3174</td>\n",
+       "      <td>Fresno</td>\n",
+       "      <td>93706</td>\n",
+       "      <td>Fresno</td>\n",
+       "      <td>-119.781696</td>\n",
+       "      <td>36.709695</td>\n",
+       "      <td>94.09</td>\n",
+       "      <td>100.00</td>\n",
+       "      <td>95-100% (highest scores)</td>\n",
+       "      <td>...</td>\n",
+       "      <td>77.51</td>\n",
+       "      <td>76.3</td>\n",
+       "      <td>97.12</td>\n",
+       "      <td>17.6</td>\n",
+       "      <td>91.72</td>\n",
+       "      <td>26.0</td>\n",
+       "      <td>79.40</td>\n",
+       "      <td>92.12</td>\n",
+       "      <td>9.55</td>\n",
+       "      <td>99.70</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>6071001600</td>\n",
+       "      <td>6133</td>\n",
+       "      <td>San Bernardino</td>\n",
+       "      <td>91761</td>\n",
+       "      <td>Ontario</td>\n",
+       "      <td>-117.618013</td>\n",
+       "      <td>34.057780</td>\n",
+       "      <td>90.68</td>\n",
+       "      <td>99.99</td>\n",
+       "      <td>95-100% (highest scores)</td>\n",
+       "      <td>...</td>\n",
+       "      <td>96.25</td>\n",
+       "      <td>72.5</td>\n",
+       "      <td>94.63</td>\n",
+       "      <td>12.3</td>\n",
+       "      <td>71.82</td>\n",
+       "      <td>34.1</td>\n",
+       "      <td>93.75</td>\n",
+       "      <td>87.44</td>\n",
+       "      <td>9.07</td>\n",
+       "      <td>98.11</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>6019000200</td>\n",
+       "      <td>3167</td>\n",
+       "      <td>Fresno</td>\n",
+       "      <td>93706</td>\n",
+       "      <td>Fresno</td>\n",
+       "      <td>-119.805504</td>\n",
+       "      <td>36.735491</td>\n",
+       "      <td>85.97</td>\n",
+       "      <td>99.97</td>\n",
+       "      <td>95-100% (highest scores)</td>\n",
+       "      <td>...</td>\n",
+       "      <td>78.39</td>\n",
+       "      <td>86.8</td>\n",
+       "      <td>99.56</td>\n",
+       "      <td>16.1</td>\n",
+       "      <td>87.98</td>\n",
+       "      <td>40.1</td>\n",
+       "      <td>97.85</td>\n",
+       "      <td>94.58</td>\n",
+       "      <td>9.81</td>\n",
+       "      <td>99.99</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>6077000801</td>\n",
+       "      <td>6692</td>\n",
+       "      <td>San Joaquin</td>\n",
+       "      <td>95203</td>\n",
+       "      <td>Stockton</td>\n",
+       "      <td>-121.314524</td>\n",
+       "      <td>37.940517</td>\n",
+       "      <td>82.49</td>\n",
+       "      <td>99.96</td>\n",
+       "      <td>95-100% (highest scores)</td>\n",
+       "      <td>...</td>\n",
+       "      <td>75.14</td>\n",
+       "      <td>61.3</td>\n",
+       "      <td>85.57</td>\n",
+       "      <td>19.6</td>\n",
+       "      <td>94.97</td>\n",
+       "      <td>21.1</td>\n",
+       "      <td>63.54</td>\n",
+       "      <td>86.70</td>\n",
+       "      <td>8.99</td>\n",
+       "      <td>97.72</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>6019001500</td>\n",
+       "      <td>2206</td>\n",
+       "      <td>Fresno</td>\n",
+       "      <td>93725</td>\n",
+       "      <td>Fresno</td>\n",
+       "      <td>-119.717843</td>\n",
+       "      <td>36.681600</td>\n",
+       "      <td>82.03</td>\n",
+       "      <td>99.95</td>\n",
+       "      <td>95-100% (highest scores)</td>\n",
+       "      <td>...</td>\n",
+       "      <td>73.72</td>\n",
+       "      <td>66.4</td>\n",
+       "      <td>90.23</td>\n",
+       "      <td>18.6</td>\n",
+       "      <td>93.65</td>\n",
+       "      <td>28.1</td>\n",
+       "      <td>83.98</td>\n",
+       "      <td>80.08</td>\n",
+       "      <td>8.30</td>\n",
+       "      <td>92.76</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>5 rows × 57 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   Census Tract  Total Population California County    ZIP  \\\n",
+       "0    6019001100              3174           Fresno   93706   \n",
+       "1    6071001600              6133    San Bernardino  91761   \n",
+       "2    6019000200              3167           Fresno   93706   \n",
+       "3    6077000801              6692       San Joaquin  95203   \n",
+       "4    6019001500              2206           Fresno   93725   \n",
+       "\n",
+       "  Nearby City \\n(to help approximate location only)   Longitude   Latitude  \\\n",
+       "0                                            Fresno -119.781696  36.709695   \n",
+       "1                                           Ontario -117.618013  34.057780   \n",
+       "2                                            Fresno -119.805504  36.735491   \n",
+       "3                                          Stockton -121.314524  37.940517   \n",
+       "4                                            Fresno -119.717843  36.681600   \n",
+       "\n",
+       "   CES 3.0 Score   CES 3.0 Percentile CES 3.0 \\nPercentile Range  \\\n",
+       "0          94.09               100.00   95-100% (highest scores)   \n",
+       "1          90.68                99.99   95-100% (highest scores)   \n",
+       "2          85.97                99.97   95-100% (highest scores)   \n",
+       "3          82.49                99.96   95-100% (highest scores)   \n",
+       "4          82.03                99.95   95-100% (highest scores)   \n",
+       "\n",
+       "        ...        Linguistic Isolation Pctl  Poverty  Poverty Pctl  \\\n",
+       "0       ...                            77.51     76.3         97.12   \n",
+       "1       ...                            96.25     72.5         94.63   \n",
+       "2       ...                            78.39     86.8         99.56   \n",
+       "3       ...                            75.14     61.3         85.57   \n",
+       "4       ...                            73.72     66.4         90.23   \n",
+       "\n",
+       "   Unemployment  Unemployment Pctl  Housing Burden  Housing Burden Pctl  \\\n",
+       "0          17.6              91.72            26.0                79.40   \n",
+       "1          12.3              71.82            34.1                93.75   \n",
+       "2          16.1              87.98            40.1                97.85   \n",
+       "3          19.6              94.97            21.1                63.54   \n",
+       "4          18.6              93.65            28.1                83.98   \n",
+       "\n",
+       "   Pop. Char.   Pop. Char. Score  Pop. Char. Pctl  \n",
+       "0        92.12              9.55            99.70  \n",
+       "1        87.44              9.07            98.11  \n",
+       "2        94.58              9.81            99.99  \n",
+       "3        86.70              8.99            97.72  \n",
+       "4        80.08              8.30            92.76  \n",
+       "\n",
+       "[5 rows x 57 columns]"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "env.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style>\n",
+       "    .dataframe thead tr:only-child th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: left;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Census Tract</th>\n",
+       "      <th>CES 3.0 Score</th>\n",
+       "      <th>CES 3.0 Percentile</th>\n",
+       "      <th>CES 3.0 \n",
+       "Percentile Range</th>\n",
+       "      <th>Total Population</th>\n",
+       "      <th>California \n",
+       "County</th>\n",
+       "      <th>Children &lt; 10 (%)</th>\n",
+       "      <th>Pop 11-64 years (%)</th>\n",
+       "      <th>Elderly &gt; 65 (%)</th>\n",
+       "      <th>Hispanic (%)</th>\n",
+       "      <th>White (%)</th>\n",
+       "      <th>African American (%)</th>\n",
+       "      <th>Native American (%)</th>\n",
+       "      <th>Asian American (%)</th>\n",
+       "      <th>Other (%)</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>6019001100</td>\n",
+       "      <td>94.09</td>\n",
+       "      <td>100.00</td>\n",
+       "      <td>95-100% (highest scores)</td>\n",
+       "      <td>3174</td>\n",
+       "      <td>Fresno</td>\n",
+       "      <td>18.8</td>\n",
+       "      <td>73.6</td>\n",
+       "      <td>7.6</td>\n",
+       "      <td>65.3</td>\n",
+       "      <td>4.2</td>\n",
+       "      <td>24.6</td>\n",
+       "      <td>0.5</td>\n",
+       "      <td>3.5</td>\n",
+       "      <td>1.8</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>6071001600</td>\n",
+       "      <td>90.68</td>\n",
+       "      <td>99.99</td>\n",
+       "      <td>95-100% (highest scores)</td>\n",
+       "      <td>6133</td>\n",
+       "      <td>San Bernardino</td>\n",
+       "      <td>19.7</td>\n",
+       "      <td>76.1</td>\n",
+       "      <td>4.2</td>\n",
+       "      <td>91.1</td>\n",
+       "      <td>5.8</td>\n",
+       "      <td>0.7</td>\n",
+       "      <td>0.3</td>\n",
+       "      <td>1.4</td>\n",
+       "      <td>0.7</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>6019000200</td>\n",
+       "      <td>85.97</td>\n",
+       "      <td>99.97</td>\n",
+       "      <td>95-100% (highest scores)</td>\n",
+       "      <td>3167</td>\n",
+       "      <td>Fresno</td>\n",
+       "      <td>21.5</td>\n",
+       "      <td>72.5</td>\n",
+       "      <td>6.0</td>\n",
+       "      <td>63.6</td>\n",
+       "      <td>5.3</td>\n",
+       "      <td>18.9</td>\n",
+       "      <td>0.6</td>\n",
+       "      <td>9.8</td>\n",
+       "      <td>1.8</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>6077000801</td>\n",
+       "      <td>82.49</td>\n",
+       "      <td>99.96</td>\n",
+       "      <td>95-100% (highest scores)</td>\n",
+       "      <td>6692</td>\n",
+       "      <td>San Joaquin</td>\n",
+       "      <td>18.7</td>\n",
+       "      <td>74.5</td>\n",
+       "      <td>6.8</td>\n",
+       "      <td>57.4</td>\n",
+       "      <td>6.0</td>\n",
+       "      <td>12.5</td>\n",
+       "      <td>0.3</td>\n",
+       "      <td>20.9</td>\n",
+       "      <td>2.8</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>6019001500</td>\n",
+       "      <td>82.03</td>\n",
+       "      <td>99.95</td>\n",
+       "      <td>95-100% (highest scores)</td>\n",
+       "      <td>2206</td>\n",
+       "      <td>Fresno</td>\n",
+       "      <td>14.8</td>\n",
+       "      <td>72.1</td>\n",
+       "      <td>13.1</td>\n",
+       "      <td>71.8</td>\n",
+       "      <td>21.4</td>\n",
+       "      <td>1.2</td>\n",
+       "      <td>0.5</td>\n",
+       "      <td>4.5</td>\n",
+       "      <td>0.6</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   Census Tract    CES 3.0 Score  CES 3.0 Percentile  \\\n",
+       "0     6019001100           94.09              100.00   \n",
+       "1     6071001600           90.68               99.99   \n",
+       "2     6019000200           85.97               99.97   \n",
+       "3     6077000801           82.49               99.96   \n",
+       "4     6019001500           82.03               99.95   \n",
+       "\n",
+       "   CES 3.0 \\nPercentile Range  Total Population California \\nCounty  \\\n",
+       "0    95-100% (highest scores)              3174             Fresno    \n",
+       "1    95-100% (highest scores)              6133      San Bernardino   \n",
+       "2    95-100% (highest scores)              3167             Fresno    \n",
+       "3    95-100% (highest scores)              6692         San Joaquin   \n",
+       "4    95-100% (highest scores)              2206             Fresno    \n",
+       "\n",
+       "   Children < 10 (%)  Pop 11-64 years (%)  Elderly > 65 (%)  Hispanic (%)  \\\n",
+       "0               18.8                 73.6               7.6          65.3   \n",
+       "1               19.7                 76.1               4.2          91.1   \n",
+       "2               21.5                 72.5               6.0          63.6   \n",
+       "3               18.7                 74.5               6.8          57.4   \n",
+       "4               14.8                 72.1              13.1          71.8   \n",
+       "\n",
+       "   White (%)  African American (%)  Native American (%)  Asian American (%)  \\\n",
+       "0        4.2                  24.6                  0.5                 3.5   \n",
+       "1        5.8                   0.7                  0.3                 1.4   \n",
+       "2        5.3                  18.9                  0.6                 9.8   \n",
+       "3        6.0                  12.5                  0.3                20.9   \n",
+       "4       21.4                   1.2                  0.5                 4.5   \n",
+       "\n",
+       "   Other (%)  \n",
+       "0        1.8  \n",
+       "1        0.7  \n",
+       "2        1.8  \n",
+       "3        2.8  \n",
+       "4        0.6  "
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "demog.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Question 3.1:** These datasets are huge and we want to limit our classification for the purposes of this homework. Use `pandas` to select data if they are `95-100% (highest scores)` or `1-5% (lowest scores)` in `CES 3.0 \\nPercentile Range` for the `env` dataframe. \n",
+    "\n",
+    "*Hint: Use `.loc` and `.isin` functions to select rows from Dataframe based on conditions*"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "new_env = ..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# ANSWER 3.1\n",
+    "# SOLUTION\n",
+    "new_env = env.loc[env['CES 3.0 \\nPercentile Range'].isin(['95-100% (highest scores)', '1-5% (lowest scores)'])]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Question 3.2:** Remember that CES 3.0 scores are generated from demographic and environmental data. From `env` dataframe, create test data and our label data. \n",
+    "\n",
+    "Let `X` be the test data consisting of `Census Tract`, `Unemployment` and `PM2.5` and `y` be the label data consisting of `Census Tract` and `CES 3.0 \\nPercentile Range`. \n",
+    "\n",
+    "*Note: `Census Tract` is not necessary but we include it for later purposes. *"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "X = new_env...\n",
+    "y = new_env..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "# ANSWER 3.2\n",
+    "# SOLUTION\n",
+    "X = new_env[['Census Tract', 'Unemployment', 'PM2.5']]\n",
+    "y = new_env[['Census Tract', 'CES 3.0 \\nPercentile Range']] "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Question 3.3:** Uh-oh, some of the data in `X` contain Null or `np.nan` values. Yikes! We need to fix this issue. In the cell below, change `X` by dropping any `np.nan` values\n",
+    "\n",
+    "*Hint: Use `.dropna()` function*"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "X = ..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "# ANSWER 3.3\n",
+    "# SOLUTION\n",
+    "X = X.dropna()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Question 3.4:** Now, our Null values our gone. But, we have come to another issue - the number of rows in `X` and `y` are different (we have dropped rows in `X`!). To fix this issue, let's merge `X` and `y` into a single dataframe on `Census Tract`. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "df = ..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# ANSWER 3.4\n",
+    "# SOLUTION\n",
+    "df = X.merge(y)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Question 3.5:** We previously included `Census Tract` data for the purpose of merging `X` and `y`. We do not need this data anymore for the classification. Select `X` and `y` from `df` such that we only have `PM2.5`, `Unemployment` data in `X` and only `CES 3.0 \\nPercentile Range` in `y`. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "X = ...\n",
+    "y = ..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "# ANSWER 3.5\n",
+    "# SOLUTION\n",
+    "X = df[['Unemployment', 'PM2.5']]\n",
+    "y = df[['CES 3.0 \\nPercentile Range']] "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Question 3.6:** Now let's split `X` and `y` into four different sets: \n",
+    "1. `X` Training Data: 80% of Environment data\n",
+    "2. `X` Testing Data: 20% of Environment data\n",
+    "3. `y` Training Data: 80% of Demographics data\n",
+    "4. `y` Testing Data: 20% of Demographics Data\n",
+    "\n",
+    "*Hint: `train_test_split` function will come in handy!*"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "X_train, X_test = ... \n",
+    "Y_train, Y_test = ..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "# ANSWER 3.6\n",
+    "# SOLUTION\n",
+    "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20)  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Question 3.7:** Whew, that was a lot of clean-up of data. Let's start classifying information now. Below, like *Question 2.2.7*, make a SVM classifier with a linear kernel (choose $C$ of your choice! Remember, if it takes too long, it is probably too high) and train the data. \n",
+    "\n",
+    "*Hint: If you get the error,* \n",
+    "\n",
+    ">`DataConversionWarning`: A column-vector ?? was passed when a `1d` array was expected. Please change the shape of ?? to (n_samples, ), for example using `ravel()`\n",
+    "\n",
+    "*use ??.values.ravel() to override this issue*"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "svclassifier = ...\n",
+    "..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "SVC(C=10, cache_size=200, class_weight=None, coef0=0.0,\n",
+       "  decision_function_shape=None, degree=3, gamma='auto', kernel='linear',\n",
+       "  max_iter=-1, probability=False, random_state=None, shrinking=True,\n",
+       "  tol=0.001, verbose=False)"
+      ]
+     },
+     "execution_count": 34,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# ANSWER 3.7\n",
+    "# SOLUTION\n",
+    "svclassifier = SVC(kernel='linear', C=10)  \n",
+    "svclassifier.fit(X_train, y_train.values.ravel())  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Question 3.8:** Use the classifier to predict the outcome of our `X_test`. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "y_pred = ..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "# ANSWER 3.8\n",
+    "# SOLUTION\n",
+    "y_pred = svclassifier.predict(X_test)  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Congratulations! You have completed training a data-set. Run the box below to see if you are getting a reasonable percentage of correct matches (~90%) "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[71  1]\n",
+      " [ 5 80]]\n",
+      "                          precision    recall  f1-score   support\n",
+      "\n",
+      "    1-5% (lowest scores)       0.93      0.99      0.96        72\n",
+      "95-100% (highest scores)       0.99      0.94      0.96        85\n",
+      "\n",
+      "             avg / total       0.96      0.96      0.96       157\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "from sklearn.metrics import classification_report, confusion_matrix  \n",
+    "print(confusion_matrix(y_test,y_pred))  \n",
+    "print(classification_report(y_test,y_pred))  "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

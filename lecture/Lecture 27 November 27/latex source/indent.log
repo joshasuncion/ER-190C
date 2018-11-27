@@ -1,0 +1,43 @@
+latexindent version 3.0.2, a script to indent .tex files
+	latexindent lives here: /usr/local/texlive/2017/texmf-dist/scripts/latexindent/
+	Wed Nov 21 06:56:30 2018
+Processing switches
+	-w|--overwrite: Overwrite mode active, will make a back up of 27 SVM.tex first
+Directory for backup files and indent.log: .
+YAML settings read
+	Reading defaultSettings.yaml from /usr/local/texlive/2017/texmf-dist/scripts/latexindent/defaultSettings.yaml
+	Home directory is /Users/callaway (didn't find either indentconfig.yaml or .indentconfig.yaml)
+	To specify user settings you would put indentconfig.yaml here: /Users/callaway/indentconfig.yaml
+	Alternatively, you can use the hidden file .indentconfig.yaml as: /Users/callaway/.indentconfig.yaml
+Backup procedure (-w flag active):
+	copying 27 SVM.tex to ./27 SVM.bak0
+List of items: myitem|item (see itemNames)
+looking for VERBATIM commands (see verbatimCommands)
+looking for FILE CONTENTS environments (see fileContentsEnvironments)
+	looking for filecontents:1 environments
+	looking for filecontents*:1 environments
+	\begin{document} found in body (after searching for filecontents)-- assuming that a preamble exists
+	Custom replacement text routine for preamble preamble
+	preamble found: LatexIndent::Preamble=HASH(0x7ff15da29a10)
+	replaced with ID: LTXIN-TK-preamble1-END
+	
+	\begin{document}
+	NOT storing LTXIN-TK-preamble1-END for indentation -- will store as VERBATIM object (see indentPreamble)
+Phase 1: searching for objects
+	looking for ENVIRONMENTS
+	looking for IFELSEFI
+	looking for HEADINGS (chapter, section, part, etc)
+	looking for COMMANDS and key = {value}
+	looking for SPECIAL begin/end
+Objects have been found.
+Operating on: masterdocument
+Number of children:
+	86
+Phase 2: finding surrounding indentation
+Phase 3: indenting objects
+Phase 4: final indentation check
+Output routine
+	Overwriting file 27 SVM.tex
+--------------
+Please direct all communication/issues to: 
+	https://github.com/cmhughes/latexindent.pl
