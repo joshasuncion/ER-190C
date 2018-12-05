@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1543942752 "28 NN.tex" "28 NN.pdf" "28 NN" 1543942755
+["pdflatex"] 1543943279 "28 NN.tex" "28 NN.pdf" "28 NN" 1543943281
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1480098698 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1480098698 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -230,10 +230,10 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1495593487 4129592 0e6cfee100d68e6d96b92c0258f2ff73 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "28 NN.aux" 1543942755 5316 95c1083fc310ea8338f9d79f5761d940 ""
-  "28 NN.nav" 1543942755 3340 35d21a5e840445edadbc6016834ba8c4 ""
-  "28 NN.out" 1543942753 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "28 NN.tex" 1543942751 16850 496f65b625b2f1bf81887b76a71e2358 ""
+  "28 NN.aux" 1543943281 5316 95c1083fc310ea8338f9d79f5761d940 ""
+  "28 NN.nav" 1543943281 3340 35d21a5e840445edadbc6016834ba8c4 ""
+  "28 NN.out" 1543943279 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "28 NN.tex" 1543943278 16852 711546ca29ba6d80fdad5e3a62a0e551 ""
   "SVM_example.png" 1543935402 126511 d592b113f39338d3df9a9e7b333af6dc ""
   "boneshaker.jpg" 1510826860 131713 3b8cdfc5d8df4fafe174b34f601801dc ""
   "bootstrap.png" 1543934552 68585 7b404b96e8e2492ad41dada8a5e0edda ""
@@ -253,10 +253,10 @@
   "skyarrow_google.png" 1510853300 1131022 c26730a181563ca4ba5aff8ba756402e ""
   "tree_vs_linear_for_classification.pdf" 1508278601 88027 940386e978b5839343a508a649caa64b ""
   (generated)
-  "28 NN.aux"
-  "28 NN.snm"
-  "28 NN.nav"
   "28 NN.toc"
+  "28 NN.nav"
   "28 NN.pdf"
-  "28 NN.out"
+  "28 NN.aux"
   "28 NN.log"
+  "28 NN.out"
+  "28 NN.snm"
