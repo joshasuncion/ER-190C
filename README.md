@@ -3,7 +3,7 @@
 ## Data, Environment and Society
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ds-modules/ER-190C/master)
-[![Binder](https://img.shields.io/badge/Launch-UCB%20Datahub-blue.svg)](http://datahub.berkeley.edu/user-redirect/interact?account=ds-modules&repo=ER-190C&branch=master&path=)
+[![UCB DataHub](https://img.shields.io/badge/Launch-UCB%20Datahub-blue.svg)](http://datahub.berkeley.edu/user-redirect/interact?account=ds-modules&repo=ER-190C&branch=master&path=)
 
 ### Professor: Duncan Callaway
 #### GSI: Seigi Karasaki
